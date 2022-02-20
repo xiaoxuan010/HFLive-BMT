@@ -53,7 +53,7 @@ Enjoy！
 
 ## 开源相关
 
-本项目完全开源，开源地址：https://github.com/xiaoxuan010/HFLive-BMT，开源协议见LICENSE文件
+本项目完全开源，开源地址：https://github.com/xiaoxuan010/HFLive-BMT ，开源协议见LICENSE文件
 
 本项目使用的开源代码有：
 
