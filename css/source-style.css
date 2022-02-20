@@ -1,0 +1,59 @@
+/*
+ * HFLive-BMT 报幕条
+ * 作者：HFLive13.0 xiaoxuan010
+ * 开源地址：https://github/xiaoxuan010/hflive-bmt
+ * 开源许可：GPL
+ * 使用的开源代码：MDUI(https://github.com/zdhxiong/mdui)基于MIT协议
+ */
+body {
+    background: transparent;    /*透明背景，也可以改成绿色#00FF00然后再抠掉，不过效果没有这样好*/
+    margin: 0;  /*无边界*/
+    /*overflow: hidden;*/
+}
+
+.box {
+    /*占满整个页面*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1920px;/*按需更改长宽*/
+    height: 1080px;
+}
+
+.container {
+    /*也是占满整个页面*/
+    position: unset;
+    height: 100%;
+    display: flex;
+    flex-direction: column;/*子元素垂直排列*/
+    justify-content: center;/*子元素居中*/
+}
+
+.bmt-title {
+    text-align: center;/*文本水平居中*/
+    margin: 0.2rem;/*上下margin不用太大*/
+    color: #FECC11;
+}
+
+.bmt-name {
+    font-family: 'FZLaGouBiaoTiTiS';/*方正拉钩标题体，可以按需更改电脑里有的字体*/
+    font-size: 15rem;
+    font-weight: bold;
+    /*text-shadow是发光效果，可按需更改颜色*/
+    text-shadow: #FFFFFF 0px 0px 10px, #FFFFFF 0px 0px 20px, #FECC1170 0px 0px 30px, #FECC1160 0px 0px 40px, #FECC1150 0px 0px 70px, #FECC1140 0px 0px 80px, #FECC1130 0px 0px 100px;
+
+}
+
+.bmt-person {
+    font-family: '方正灵飞经小楷 简';
+    font-size: 4rem;
+    text-shadow:  #FECC11 0px 0px 70px, #2c2715 0px 0px 80px, #FECC11 0px 0px 100px;
+}
+
+.hide {
+    opacity: 0; /*隐藏的时候不透明度设为0，实现淡入淡出效果*/
+}
+
+.hide .bmt-name {
+    font-size: 18rem; /*隐藏的时候字号变大，实现放大效果*/
+}

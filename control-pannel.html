@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<!--
+ HFLive-BMT 报幕条
+ 作者：HFLive13.0 xiaoxuan010
+ 开源地址：https://github/xiaoxuan010/hflive-bmt
+ 开源许可：GPL
+ 使用的开源代码：MDUI(https://github.com/zdhxiong/mdui)基于MIT协议
+-->
+<html lang="zh-cmn-Hans">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+	<title>HFLiveBMT - 控制面板</title>
+	<link rel="stylesheet" href="./css/mdui.css" />
+	<link rel="stylesheet" href="./css/control-style.css" />
+</head>
+
+<body class="mdui-theme-primary-indigo mdui-theme-accent-pink mdui-theme-layout-dark">
+	<p></p>
+	<div class="mdui-container">
+		<!-- 4个OnAir按钮-->
+		<div class="key-onair-btn">
+			<button id="key0-onair-btn" onclick='OnAir(0);'
+				class="mdui-btn mdui-ripple mdui-color-grey-200 mdui-shadow-12">KEY1</button>
+			<button id="key1-onair-btn" onclick='OnAir(1);'
+				class="mdui-btn mdui-ripple mdui-color-grey-200 mdui-shadow-12">KEY2</button>
+			<button id="key2-onair-btn" onclick='OnAir(2);'
+				class="mdui-btn mdui-ripple mdui-color-grey-200 mdui-shadow-12">KEY3</button>
+			<button id="key3-onair-btn" onclick='OnAir(3);'
+				class="mdui-btn mdui-ripple mdui-color-grey-200 mdui-shadow-12">KEY4</button>
+		</div>
+
+		<!-- 4个进度条，分别对应4个key-->
+		<div class="key-progress">
+			<p>
+			<div class="mdui-progress">
+				<div id="key0-progress"
+					class="mdui-progress-determinate mdui-color-red-600 bmt-progress-transision-time"></div>
+			</div>
+			</p>
+			<p>
+			<div class="mdui-progress">
+				<div id="key1-progress"
+					class="mdui-progress-determinate mdui-color-red-600 bmt-progress-transision-time"></div>
+			</div>
+			</p>
+			<p>
+			<div class="mdui-progress">
+				<div id="key2-progress"
+					class="mdui-progress-determinate mdui-color-red-600 bmt-progress-transision-time"></div>
+			</div>
+			</p>
+			<p>
+			<div class="mdui-progress">
+				<div id="key3-progress"
+					class="mdui-progress-determinate mdui-color-red-600 bmt-progress-transision-time"></div>
+			</div>
+			</p>
+		</div>
+
+		<h2>设置</h2>
+		<button id="import-export-button" mdui-dialog="{target: '#import-export-dialog'}"
+			class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12 import-export-button">导入/导出设置</button>
+		<!--导入导出设置的对话框-->
+		<div id="import-export-dialog" class="mdui-dialog">
+			<div class="mdui-dialog-title">配置文件</div>
+			<div class="mdui-dialog-content">
+				<div class="mdui-textfield">
+					<textarea id="imex-preset-textarea" rows="4" class="mdui-textfield-input"
+						placeholder="在此处输入JSON配置文件"></textarea>
+				</div>
+			</div>
+			<div class="mdui-dialog-actions mdui-dialog-actions-stacked">
+				<button class="mdui-btn mdui-ripple" mdui-dialog-cancel>放弃更改</button>
+				<button class="mdui-btn mdui-ripple" onclick="CopyPresetText('imex-preset-textarea');"
+					mdui-dialog-close>拷贝到剪贴板</button>
+				<button class="mdui-btn mdui-ripple" mdui-dialog-confirm>保存配置并关闭</button>
+			</div>
+		</div>
+
+		<div class="mdui-panel" mdui-panel>
+
+			<!-- KEY0 -->
+			<div class="mdui-panel-item">
+				<div class="mdui-panel-item-header">KEY0</div>
+				<div class="mdui-panel-item-body">
+					<button id="import-export-key0-button" mdui-dialog="{target: '#import-export-key0-dialog'}"
+						class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">导入/导出预设</button>
+					<div id="import-export-key0-dialog" class="mdui-dialog">
+						<div class="mdui-dialog-title">配置文件</div>
+						<div class="mdui-dialog-content">
+							<div class="mdui-textfield">
+								<textarea id="imex-key0-preset-textarea" rows="4" class="mdui-textfield-input"
+									placeholder="在此处输入JSON配置文件"></textarea>
+							</div>
+						</div>
+						<div class="mdui-dialog-actions mdui-dialog-actions-stacked">
+							<button class="mdui-btn mdui-ripple" mdui-dialog-cancel>放弃更改</button>
+							<button class="mdui-btn mdui-ripple" onclick="CopyPresetText('imex-key0-preset-textarea');"
+								mdui-dialog-close>拷贝到剪贴板</button>
+							<button class="mdui-btn mdui-ripple" mdui-dialog-confirm>保存配置并关闭</button>
+						</div>
+					</div>
+
+					<div class="mdui-textfield key-num">
+						<label class="mdui-textfield-label">转场时间（s)</label>
+						<input id="key0-transition-time" onchange="SaveKeySettings(0);" class="mdui-textfield-input"
+							type="number" />
+					</div>
+					<h2 style="display: inline;">
+						预设（当前预设：<p style="display: inherit;" id="key0-current-preset-show"></p>）
+					</h2>
+					<label class="mdui-slider mdui-slider-discrete">
+						<input id="key0-preset" oninput="RefreshCurrentPreset(0);" onchange="PresetSwitched(0);"
+							class="key-preset" type="range" step="1" min="0" max="20" />
+					</label>
+					<div class="mdui-textfield key-num">
+						<label class="mdui-textfield-label">序号</label>
+						<input id="key0-num" class="mdui-textfield-input" type="text" />
+					</div>
+					<div class="mdui-textfield key-person">
+						<label class="mdui-textfield-label">表演者</label>
+						<input id="key0-person" class="mdui-textfield-input" type="text" />
+					</div>
+					<div class="mdui-textfield key-name">
+						<label class="mdui-textfield-label">节目名</label>
+						<input id="key0-name" class="mdui-textfield-input" type="text" />
+					</div>
+					<button id="key0-save-btn" onclick="SavePreset(0);"
+						class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">保存预设</button>
+					<button id="key0-undo-btn" onclick="UndoPreset(0);"
+						class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">舍弃更改</button>
+					<button id="key0-delete-preset" onclick="deletePreset(0);"
+						class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">删除预设</button>
+					<button id="key0-add-preset" onclick="addPreset(0);"
+						class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">添加预设</button>
+				</div>
+			</div>
+
+			<!-- KEY 1 -->
+			<div class="mdui-panel-item">
+				<div class="mdui-panel-item-header">KEY1</div>
+				<div class="mdui-panel-item-body">
+					<button id="import-export-key1-button" mdui-dialog="{target: '#import-export-key1-dialog'}"
+						class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">导入/导出预设</button>
+					<div id="import-export-key1-dialog" class="mdui-dialog">
+						<div class="mdui-dialog-title">配置文件</div>
+						<div class="mdui-dialog-content">
+							<div class="mdui-textfield">
+								<textarea id="imex-key1-preset-textarea" rows="4" class="mdui-textfield-input"
+									placeholder="在此处输入JSON配置文件"></textarea>
+							</div>
+						</div>
+						<div class="mdui-dialog-actions mdui-dialog-actions-stacked">
+							<button class="mdui-btn mdui-ripple" mdui-dialog-cancel>放弃更改</button>
+							<button class="mdui-btn mdui-ripple" onclick="CopyPresetText('imex-key1-preset-textarea');"
+								mdui-dialog-close>拷贝到剪贴板</button>
+							<button class="mdui-btn mdui-ripple" mdui-dialog-confirm>保存配置并关闭</button>
+						</div>
+					</div>
+
+					<div class="mdui-textfield key-num">
+						<label class="mdui-textfield-label">转场时间（s)</label>
+						<input id="key1-transition-time" onchange="SaveKeySettings(1);" class="mdui-textfield-input"
+							type="number" />
+					</div>
+					<h2 style="display: inline;">
+						预设（当前预设：<p style="display: inherit;" id="key1-current-preset-show"></p>）
+					</h2>
+					<label class="mdui-slider mdui-slider-discrete">
+						<input id="key1-preset" oninput="RefreshCurrentPreset(1);" onchange="PresetSwitched(1);"
+							class="key-preset" type="range" step="1" min="0" max="20" />
+					</label>
+					<div class="mdui-textfield key-num">
+						<label class="mdui-textfield-label">序号</label>
+						<input id="key1-num" class="mdui-textfield-input" type="text" />
+					</div>
+					<div class="mdui-textfield key-person">
+						<label class="mdui-textfield-label">表演者</label>
+						<input id="key1-person" class="mdui-textfield-input" type="text" />
+					</div>
+					<div class="mdui-textfield key-name">
+						<label class="mdui-textfield-label">节目名</label>
+						<input id="key1-name" class="mdui-textfield-input" type="text" />
+					</div>
+					<button id="key1-save-btn" onclick="SavePreset(1);"
+						class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">保存预设</button>
+					<button id="key1-undo-btn" onclick="UndoPreset(1);"
+						class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">舍弃更改</button>
+					<button id="key1-delete-preset" onclick="deletePreset(1);"
+						class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">删除预设</button>
+					<button id="key1-add-preset" onclick="addPreset(1);"
+						class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">添加预设</button>
+				</div>
+			</div>
+
+			<!-- KEY 2 -->
+			<div class="mdui-panel-item">
+				<div class="mdui-panel-item-header">KEY2</div>
+				<div class="mdui-panel-item-body">
+					<button id="import-export-key2-button" mdui-dialog="{target: '#import-export-key2-dialog'}"
+						class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">导入/导出预设</button>
+					<div id="import-export-key2-dialog" class="mdui-dialog">
+						<div class="mdui-dialog-title">配置文件</div>
+						<div class="mdui-dialog-content">
+							<div class="mdui-textfield">
+								<textarea id="imex-key2-preset-textarea" rows="4" class="mdui-textfield-input"
+									placeholder="在此处输入JSON配置文件"></textarea>
+							</div>
+						</div>
+						<div class="mdui-dialog-actions mdui-dialog-actions-stacked">
+							<button class="mdui-btn mdui-ripple" mdui-dialog-cancel>放弃更改</button>
+							<button class="mdui-btn mdui-ripple" onclick="CopyPresetText('imex-key2-preset-textarea');"
+								mdui-dialog-close>拷贝到剪贴板</button>
+							<button class="mdui-btn mdui-ripple" mdui-dialog-confirm>保存配置并关闭</button>
+						</div>
+					</div>
+
+					<div class="mdui-textfield key-num">
+						<label class="mdui-textfield-label">转场时间（s)</label>
+						<input id="key2-transition-time" onchange="SaveKeySettings(2);" class="mdui-textfield-input"
+							type="number" />
+					</div>
+					<h2 style="display: inline;">
+						预设（当前预设：<p style="display: inherit;" id="key2-current-preset-show"></p>）
+					</h2>
+					<label class="mdui-slider mdui-slider-discrete">
+						<input id="key2-preset" oninput="RefreshCurrentPreset(2);" onchange="PresetSwitched(2);"
+							class="key-preset" type="range" step="1" min="0" max="20" />
+					</label>
+					<div class="mdui-textfield key-num">
+						<label class="mdui-textfield-label">序号</label>
+						<input id="key2-num" class="mdui-textfield-input" type="text" />
+					</div>
+					<div class="mdui-textfield key-person">
+						<label class="mdui-textfield-label">表演者</label>
+						<input id="key2-person" class="mdui-textfield-input" type="text" />
+					</div>
+					<div class="mdui-textfield key-name">
+						<label class="mdui-textfield-label">节目名</label>
+						<input id="key2-name" class="mdui-textfield-input" type="text" />
+					</div>
+					<button id="key2-save-btn" onclick="SavePreset(2);"
+						class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">保存预设</button>
+					<button id="key2-undo-btn" onclick="UndoPreset(2);"
+						class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">舍弃更改</button>
+					<button id="key2-delete-preset" onclick="deletePreset(2);"
+						class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">删除预设</button>
+					<button id="key2-add-preset" onclick="addPreset(2);"
+						class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">添加预设</button>
+				</div>
+			</div>
+
+			<!-- KEY 3 -->
+			<div class="mdui-panel-item">
+				<div class="mdui-panel-item-header">KEY3</div>
+				<div class="mdui-panel-item-body">
+					<button id="import-export-key3-button" mdui-dialog="{target: '#import-export-key3-dialog'}"
+						class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">导入/导出预设</button>
+					<div id="import-export-key3-dialog" class="mdui-dialog">
+						<div class="mdui-dialog-title">配置文件</div>
+						<div class="mdui-dialog-content">
+							<div class="mdui-textfield">
+								<textarea id="imex-key3-preset-textarea" rows="4" class="mdui-textfield-input"
+									placeholder="在此处输入JSON配置文件"></textarea>
+							</div>
+						</div>
+						<div class="mdui-dialog-actions mdui-dialog-actions-stacked">
+							<button class="mdui-btn mdui-ripple" mdui-dialog-cancel>放弃更改</button>
+							<button class="mdui-btn mdui-ripple" onclick="CopyPresetText('imex-key3-preset-textarea');"
+								mdui-dialog-close>拷贝到剪贴板</button>
+							<button class="mdui-btn mdui-ripple" mdui-dialog-confirm>保存配置并关闭</button>
+						</div>
+					</div>
+
+					<div class="mdui-textfield key-num">
+						<label class="mdui-textfield-label">转场时间（s)</label>
+						<input id="key3-transition-time" onchange="SaveKeySettings(3);" class="mdui-textfield-input"
+							type="number" />
+					</div>
+					<h2 style="display: inline;">
+						预设（当前预设：<p style="display: inherit;" id="key3-current-preset-show"></p>）
+					</h2>
+					<label class="mdui-slider mdui-slider-discrete">
+						<input id="key3-preset" oninput="RefreshCurrentPreset(3);" onchange="PresetSwitched(3);"
+							class="key-preset" type="range" step="1" min="0" max="20" />
+					</label>
+					<div class="mdui-textfield key-num">
+						<label class="mdui-textfield-label">序号</label>
+						<input id="key3-num" class="mdui-textfield-input" type="text" />
+					</div>
+					<div class="mdui-textfield key-person">
+						<label class="mdui-textfield-label">表演者</label>
+						<input id="key3-person" class="mdui-textfield-input" type="text" />
+					</div>
+					<div class="mdui-textfield key-name">
+						<label class="mdui-textfield-label">节目名</label>
+						<input id="key3-name" class="mdui-textfield-input" type="text" />
+					</div>
+					<button id="key3-save-btn" onclick="SavePreset(3);"
+						class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">保存预设</button>
+					<button id="key3-undo-btn" onclick="UndoPreset(3);"
+						class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">舍弃更改</button>
+					<button id="key3-delete-preset" onclick="deletePreset(3);"
+						class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">删除预设</button>
+					<button id="key3-add-preset" onclick="addPreset(3);"
+						class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">添加预设</button>
+				</div>
+			</div>
+
+			<button mdui-dialog="{target: '#tips-dialog'}" class="mdui-btn">使用提示</button>
+			<div id="tips-dialog" class="mdui-dialog">
+				<div class="mdui-dialog-title">使用提示</div>
+				<div class="mdui-dialog-content">
+					<p>由于开发时间较短，因此没有提供太多的设置项。但所有的外观都可以去css文件里自行调整。
+						./css/control-style.css就是控制面板的外观配置文件
+						./css/source-style.css就是播放器的样式文件
+					</p>
+					<p>
+						目前只写了主报幕条的样式（4个Key都是），稍加修改就可以实现歌词的播放。
+					</p>
+				</div>
+				<div class="mdui-dialog-actions">
+					<button class="mdui-btn mdui-ripple" mdui-dialog-close>完成</button>
+				</div>
+			</div>
+
+		</div>
+		<script src="./js/mdui.min.js"></script>
+		<script src="./js/default-preset.js"></script>
+		<script src="./js/control-script.js"></script>
+</body>
+
+</html>
