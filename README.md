@@ -1,6 +1,6 @@
 # HFLive-BMT
 
-![](image/3984a1bfd6d18100-16453495411352.png)
+![](https://i.bmp.ovh/imgs/2022/02/3984a1bfd6d18100.png)
 
 ## 这是什么
 
@@ -24,15 +24,15 @@
 
 1. 打开OBS，左上角 视图 > 停靠部件(Dock) > 自定义浏览器(Dock)
 
-   ![](image/103d74983a6fb695.png)
+   ![](https://i.bmp.ovh/imgs/2022/02/103d74983a6fb695.png)
 
    在弹出的窗口中，左侧Dock名可随意填写（如“HFLiveBMT - 控制面板")，右侧URL填写control-pannel.html文件的路径（如"C:\User\xiaoxuan010\Desktop\HFLive-BMT\control-pannel.html"），注意路径不要加双引号。
 
-   ![](image/b63175d47d7f718c.png)
+   ![](https://i.bmp.ovh/imgs/2022/02/b63175d47d7f718c.png)
 
 2. 弹出的控制窗口，双击顶部可以固定到OBS页面。
 3. 添加源“浏览器”，属性为：勾选本地文件，路径为show-source.html的路径（如C:/Users/xiaoxuan010/Desktop/HFLive-BMT/show-source.html）；宽度设置为1080，高度设置为1920；可以使用自定义帧率；自定义CSS全部删掉（或按需填写）；其它可按默认。
-4. ![](image/c59fc1fdc110f583.png)
+4. ![](https://i.bmp.ovh/imgs/2022/02/c59fc1fdc110f583.png)
 
 Enjoy！
 
@@ -57,4 +57,4 @@ Enjoy！
 
 本项目使用的开源代码有：
 
-1. MDUI（https://github.com/zdhxiong/mdui），其基于MIT协议
+1. MDUI( https://github.com/zdhxiong/mdui )，其基于MIT协议
