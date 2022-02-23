@@ -20,7 +20,7 @@
 
 ### 安装到OBS
 
-以OBS 27.1.3 为例
+#### OBS 27.1.3
 
 1. 打开OBS，左上角 视图 > 停靠部件(Dock) > 自定义浏览器(Dock)
 
@@ -30,11 +30,24 @@
 
    ![](https://i.bmp.ovh/imgs/2022/02/b63175d47d7f718c.png)
 
-2. 弹出的控制窗口，双击顶部可以固定到OBS页面。
+2. 弹出的控制窗口，可以自由拖动，并入OBS界面中。（注意检查不要“锁定用户界面“）
 3. 添加源“浏览器”，属性为：勾选本地文件，路径为show-source.html的路径（如C:/Users/xiaoxuan010/Desktop/HFLive-BMT/show-source.html）；宽度设置为1080，高度设置为1920；可以使用自定义帧率；自定义CSS全部删掉（或按需填写）；其它可按默认。
-4. ![](https://i.bmp.ovh/imgs/2022/02/c59fc1fdc110f583.png)
 
-Enjoy！
+   ![](https://i.bmp.ovh/imgs/2022/02/c59fc1fdc110f583.png)
+
+### OBS 27.2.1
+
+在OBS 27.2.1中，出现了一些特性，需要改变安装方法。如果安装之后发现无法使用，就两种方法都试一下。
+
+1. 左上角“停靠窗口>自定义浏览器停靠窗口"，以下步骤同上。
+
+   ![](https://i.bmp.ovh/imgs/2022/02/ffa4889b56f7bf6f.png)
+
+2. **重点来了**：浏览器源中，不用勾选文件，按如下格式填入地址“file:///M:/HFLive-BMT/show-source.html"，实在不会填的可以在浏览器打开html文件然后把路径复制下来，如图。
+
+   ![](https://i.bmp.ovh/imgs/2022/02/530b6bb2ebdb5c88.png)
+
+
 
 ### 安装字体
 
