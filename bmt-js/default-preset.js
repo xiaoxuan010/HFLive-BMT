@@ -9,7 +9,7 @@ var default_preset = [
     {
         "key_num":"0",
         "key_name":"KEY0",
-        "status":"0%",
+        "status":"closed",
         "transition_time":"1",
         "content":[
             {
@@ -23,7 +23,7 @@ var default_preset = [
     {
         "key_num":"1",
         "key_name":"KEY1",
-        "status":"0%",
+        "status":"closed",
         "transition_time":"1",
         "content":[
             {
@@ -37,13 +37,13 @@ var default_preset = [
     {
         "key_num":"2",
         "key_name":"KEY2",
-        "status":"0%",
+        "status":"closed",
         "transition_time":"1",
         "content":[
             {
                 "num":"0",
-                "person":"表演者",
-                "name":"节目名"
+                "transition_time":"1s",
+                "name":"也许世界就这样"
             }
         ],
         "current_preset":"0"
@@ -51,13 +51,13 @@ var default_preset = [
     {
         "key_num":"3",
         "key_name":"KEY3",
-        "status":"0%",
+        "status":"closed",
         "transition_time":"1",
         "content":[
             {
                 "num":"0",
-                "person":"表演者",
-                "name":"节目名"
+                "transition_time":"1s",
+                "name":"我也还在路上"
             }
         ],
         "current_preset":"0"

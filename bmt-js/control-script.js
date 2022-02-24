@@ -9,6 +9,7 @@
 // 全局变量
 var preset;
 const preset_id = "hflive-bmt-preset";
+var key2_timer, key3_timer;
 
 // 初始化函数
 preset_init();
@@ -78,9 +79,13 @@ function UndoPreset(i) {
 
 //增加预设
 function addPreset(i) {
-    var preset_length = preset[i].content.push({ "num": "", "person": "", "name": "" });//初始化预设，都是空的
-    document.getElementById('key' + i + '-preset').setAttribute('max', preset_length - 1);//刷新滑块最大值
-    document.getElementById('key' + i + '-preset').value = preset_length;//将滑块的值设为长度（忘记为啥不用减一了）
+    SavePreset(i);
+    var preset_index = preset[i].content.push({ "num": "", "person": "", "name": "" }) - 1;//初始化预设，都是空的
+    preset[i].content[preset_index].num = preset_index;
+    preset[i].current_preset = preset_index;
+    if (i > 1) preset[i].content[preset_index].person = preset[i].transition_time;//对于KEY2、3，将person（表示动画时间）设为默认时间
+    document.getElementById('key' + i + '-preset').setAttribute('max', preset_index);//刷新滑块最大值
+    document.getElementById('key' + i + '-preset').value = preset_index;//将滑块的值设为长度
     RefreshCurrentPreset(i);//刷新文本框
     mdui.updateSliders();//更新滑块
     SavePresetToLocal();
@@ -106,13 +111,19 @@ function SavePresetToLocal() {
 function OnAir(i) { //点了四个按钮中的一个之后
     var btn_element = document.getElementById('key' + i + '-onair-btn');//先获得那个按钮
     btn_element.setAttribute('disabled', '');//设为禁用
+
+    if (i == 2 && key2_timer) clearTimeout(key2_timer);
+    if (i == 3 && key3_timer) clearTimeout(key3_timer);
+    preset[i].status = preset[i].status == 'CLOSED' ? 'OPENING' : 'CLOSING';//切换key状态值
     var transition_time = preset[i].transition_time * 1000;//读一下转场时间
-    setTimeout(function (elem) {
-        elem.removeAttribute('disabled')
-    }, transition_time, btn_element);//转场完之后取消禁用
-    preset[i].status = preset[i].status == '0%' ? '100%' : '0%';//切换key状态值
     SavePresetToLocal();
     RefreshKeyStatus(i);
+    setTimeout(function (elem) {
+        elem.removeAttribute('disabled')
+        preset[i].status = preset[i].status == 'OPENING' ? 'OPENED' : 'CLOSED';//切换key状态值
+        SavePresetToLocal();
+        RefreshKeyStatus(i);
+    }, transition_time, btn_element);//转场完之后取消禁用
 }
 
 //刷新Key状态
@@ -120,23 +131,31 @@ function RefreshKeyStatus(i) {
     //创建一个style标签，用于控制转场时间（进度条用的）
     var transision_time_style = document.createElement('style');
     transision_time_style.id = 'bmt-transision-time-style';
-    transision_time_style.innerHTML = '.bmt-progress-transision-time {transition: ' + preset[i].transition_time + 's ease;}';
+    if (preset[i].status == 'CLOSING' || preset[i].status == 'OPENING') {
+        transision_time_style.innerHTML = '.bmt-progress-transision-time {transition: ' + preset[i].transition_time + 's ease;}';
+    }
     if (document.getElementById('bmt-transision-time-style') != undefined)
         document.getElementsByTagName('html')[0].removeChild(document.getElementById('bmt-transision-time-style'));//如果之前有一样的就删了
     document.getElementsByTagName('html')[0].appendChild(transision_time_style);//把标签写入document，就生效了
-    /*这里有bug，不过没时间修了，可能会影响控制面板的显示，但是显示那边是修好了的。（不过也可能没问题）*/
 
-    if (preset[i].status == '100%') {
-        document.getElementById('key' + i + '-onair-btn').classList.remove('mdui-color-grey-200');//取消灰色
-        document.getElementById('key' + i + '-onair-btn').classList.add('mdui-color-red-600');//变成红色（不过disabled状态不会显示红色）
-        document.getElementById('key' + i + '-progress').classList.remove('bmt-status-0');//取消0%状态
-        document.getElementById('key' + i + '-progress').classList.add('bmt-status-100');//变成100%状态
-    }
-    else {
-        document.getElementById('key' + i + '-onair-btn').classList.remove('mdui-color-red-600');//取消红色
-        document.getElementById('key' + i + '-onair-btn').classList.add('mdui-color-grey-200');//变成灰色
-        document.getElementById('key' + i + '-progress').classList.remove('bmt-status-100');//取消100%状态
-        document.getElementById('key' + i + '-progress').classList.add('bmt-status-0');//变成0%状态
+    //设置状态
+    switch (preset[i].status) {
+        case 'CLOSED':
+        case 'CLOSING': {
+            document.getElementById('key' + i + '-onair-btn').classList.remove('mdui-color-red-600');//取消红色
+            document.getElementById('key' + i + '-onair-btn').classList.add('mdui-color-grey-200');//变成灰色
+            document.getElementById('key' + i + '-progress').classList.remove('bmt-status-100');//取消100%状态
+            document.getElementById('key' + i + '-progress').classList.add('bmt-status-0');//变成0%状态
+            break;
+        }
+        case 'OPENING':
+        case 'OPENED': {
+            document.getElementById('key' + i + '-onair-btn').classList.remove('mdui-color-grey-200');//取消灰色
+            document.getElementById('key' + i + '-onair-btn').classList.add('mdui-color-red-600');//变成红色（不过disabled状态不会显示红色）
+            document.getElementById('key' + i + '-progress').classList.remove('bmt-status-0');//取消0%状态
+            document.getElementById('key' + i + '-progress').classList.add('bmt-status-100');//变成100%状态
+
+        }
     }
 }
 
@@ -174,11 +193,80 @@ document.getElementById('import-export-dialog').addEventListener('confirm.mdui.d
     }
     SavePresetToLocal();//没问题才会存进本地
     preset_init();//用新的配置刷新
+    mdui.snackbar('保存成功');
 });
+function importKeyPreset(i) {
+    try {
+        preset[i] = JSON.parse(document.getElementById('imex-key' + i + '-preset-textarea').value);
+    } catch (err) {
+        console.log(err);
+        mdui.alert('输入的配置文件不合法，详见浏览器Console.', '修改未生效');
+        return;
+    }
+    SavePresetToLocal();//没问题才会存进本地
+    preset_init();//用新的配置刷新
+    mdui.snackbar('保存成功');
+}
 
 //拷贝输入框文本
 function CopyPresetText(id) {
     var preset_json = document.getElementById(id).value;
     navigator.clipboard.writeText(preset_json);
-    mdui.alert('若没有看到拷贝的内容，请自行全选、复制', '拷贝成功');
+    mdui.snackbar('拷贝成功');
+}
+
+
+//KEY2、3歌词控制
+function LyricsBack(i) {
+    var pcp = parseInt(preset[i].current_preset);
+    if (pcp == 0) {
+        mdui.snackbar('已到达首句歌词');
+    }
+    else {
+        preset[i].current_preset = pcp - 1;
+        document.getElementById('key' + i + '-preset').value = pcp - 1;
+        mdui.updateSliders();
+        RefreshCurrentPreset(i);
+        SavePresetToLocal();
+    }
+}
+function LyricsForward(i) {
+    var pcp = parseInt(preset[i].current_preset);
+    if (pcp == preset[i].content.length - 1) {
+        mdui.snackbar('已到达末尾歌词');
+    }
+    else {
+        preset[i].current_preset = pcp + 1;
+        document.getElementById('key' + i + '-preset').value = pcp + 1;
+        mdui.updateSliders();
+        RefreshCurrentPreset(i);
+        SavePresetToLocal();
+    }
+}
+function LyricsPlayForward(i) {
+    var pcp = parseInt(preset[i].current_preset);
+    if (pcp == preset[i].content.length - 1) {
+        mdui.snackbar('已到达末尾歌词');
+    }
+    else {
+        pcp++;
+        preset[i].current_preset = pcp;
+        document.getElementById('key' + i + '-preset').value = pcp;
+        mdui.updateSliders();
+        RefreshCurrentPreset(i);
+
+        var btn_element = document.getElementById('key' + i + '-lyrics-play-forward-btn');//先获得那个按钮
+        btn_element.setAttribute('disabled', '');//设为禁用
+        preset[i].status = 'PLAYING_FORWARD';
+        var transition_time = preset[i].content[pcp].person * 1000;//读一下转场时间
+        SavePresetToLocal();
+        RefreshKeyStatus(i);
+        key2_timer = setTimeout(function (elem) {
+            elem.removeAttribute('disabled')
+            preset[i].status = 'OPENED';
+            SavePresetToLocal();
+            RefreshKeyStatus(i);
+        }, transition_time, btn_element);//转场完之后取消禁用
+    }
+
 }
