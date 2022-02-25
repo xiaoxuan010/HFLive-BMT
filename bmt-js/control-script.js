@@ -119,7 +119,7 @@ function OnAir(i) { //点了四个按钮中的一个之后
     SavePresetToLocal();
     RefreshKeyStatus(i);
     setTimeout(function (elem) {
-        elem.removeAttribute('disabled')
+        elem.removeAttribute('disabled');
         preset[i].status = preset[i].status == 'OPENING' ? 'OPENED' : 'CLOSED';//切换key状态值
         SavePresetToLocal();
         RefreshKeyStatus(i);

@@ -18,11 +18,11 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 1920px;
     /*按需更改长宽*/
+    width: 1920px;
     height: 1080px;
     /*调试用：显示边框*/
-    /* border: solid; */
+    border: solid;
 }
 
 .title-container {
@@ -37,13 +37,10 @@ body {
 }
 
 .lyrics-container {
-    /*调试用：显示边框
-    border: solid;*/
     /*歌词的样式，应用于KEY2*/
-    position: fixed;
-    bottom: 150px;
+    position: absolute;
+    bottom: 50px;
     left: 150px;
-    height: fit-content;
 }
 
 .lyrics-key {
