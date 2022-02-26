@@ -9,8 +9,6 @@ body {
     background: transparent;
     /*透明背景，也可以改成绿色#00FF00然后再抠掉，不过效果没有这样好*/
     margin: 0;
-    /*无边界*/
-    /*overflow: hidden;*/
 }
 
 .box {
@@ -22,7 +20,7 @@ body {
     width: 1920px;
     height: 1080px;
     /*调试用：显示边框*/
-    border: solid;
+    /* border: solid; */
 }
 
 .title-container {
@@ -49,7 +47,6 @@ body {
     font-weight: bold;
     color: #FECC11;
     text-shadow: #000000 0px 0px 10px, #CCCCCC 0px 0px 20px, #FECC1170 0px 0px 30px, #FECC1160 0px 0px 40px, #FECC1150 0px 0px 70px, #FECC1140 0px 0px 80px, #FECC1130 0px 0px 100px;
-
 }
 
 .bmt-title {

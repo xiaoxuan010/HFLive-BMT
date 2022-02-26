@@ -33,7 +33,7 @@ function RefreshContent() {
     for (var i = 0; i < 4; i++) {   //重复4次，每次设置一个key 
         var current_preset = preset[i].current_preset;  //当前使用的预设编号
         var current_content = preset[i].content[current_preset];
-        $(`#key${i}-name`).text(current_content.name);
+        lyricsShow(i, current_preset);
         if (i < 2)
             $(`#key${i}-person`).html(current_content.person);
 
@@ -53,11 +53,68 @@ function RefreshContent() {
                 $(`#key${i}`).addClass('hide');
                 break;
             }
-            case 'OPENING':
-            case 'OPENED': {
+            case 'OPENED':
+            case 'OPENING': {
                 $(`#key${i}`).removeClass('hide');
+                break;
+            }
+            case 'PLAYING_FORWARD': {
+                $(`#key${i}`).removeClass('hide');
+                lyricsPlay(i, current_preset);
             }
         }
 
+    }
+}
+
+//逐字出现
+function lyricsPlay(i, cp) {
+    var j = 0;
+    $(`#key${i}-name`).empty();
+    var content = preset[i].content[cp].name;
+    var tTime = preset[i].content[cp].person * 1000;
+    if (tTime > 3000)
+        tTime = 3000;
+    var eTime = tTime / content.length;
+    var PFtimer = setInterval(() => {
+        var chr = content[j++];
+        var elem = document.createElement('span');
+        $(elem).text(chr);
+        $(elem).addClass('hide');
+        $(elem).css({
+            'font-size': '0em',
+            'transition': `${eTime * 3}ms ease`,
+            'vertical-align': 'middle',
+            'text-align': 'center',
+            'display': 'inline-block',
+            'width': $(`#key${i}-name`).css('font-size')
+        })
+        $(`#key${i}-name`).append(elem);
+        setTimeout(function () {
+            $(elem).removeClass('hide');
+            $(elem).css('font-size', 'inherit');
+        }, 100);
+        if (j > content.length) {
+            clearInterval(PFtimer);
+            return;
+        }
+    }, eTime);
+}
+//直接出现
+function lyricsShow(i, cp) {
+    var content = preset[i].content[cp].name;
+    if ($(`#key${i}-name`).text() == content) return;
+    $(`#key${i}-name`).empty();
+    for (var j = 0; j < content.length; j++) {
+        var chr = content[j];
+        var elem = document.createElement('span');
+        $(elem).text(chr);
+        $(elem).css({
+            'vertical-align': 'middle',
+            'text-align': 'center',
+            'display': 'inline-block',
+            'width': $(`#key${i}-name`).css('font-size')
+        })
+        $(`#key${i}-name`).append(elem);
     }
 }

@@ -31,7 +31,6 @@ function preset_init() {
 
     // 重复四次，每次设置一个key
     for (var i = 0; i < 4; i++) {
-        $(`#key${i}-preset`).val(preset[i].current_preset);
         RefreshKeySettings(i);
         RefreshCurrentPreset(i);
         RefreshKeyStatus(i);
@@ -61,6 +60,7 @@ function PresetSwitched(i) {    //滑动条切换完毕后调用
 function RefreshKeySettings(i) {
     $(`#key${i}-onair-btn`).text(preset[i].key_name);   //设置按钮的文字
     $(`#key${i}-preset`).attr('max', preset[i].content.length - 1);   //设置滑动条的最大值（因为包括0所以长度减一）
+    $(`#key${i}-preset`).val(preset[i].current_preset);
     $(`#key${i}-transition-time`).val(preset[i].transition_time); //读取转场时间，写入文本框
     mdui.updateSliders();//更新滑动条
 }
@@ -175,7 +175,6 @@ function imexOpened(i) {
 document.getElementById('import-export-dialog').addEventListener('confirm.mdui.dialog', function () {
     try {
         preset = JSON.parse($(`#imex-preset-textarea`).val());//尝试解析JSON
-        preset = $('imex-preset-textarea').val();
     } catch (err) {     //如果JSON格式不对就抛出异常
         console.log(err);
         mdui.alert('输入的配置文件不合法，详见浏览器Console.', '修改未生效');
@@ -252,6 +251,7 @@ function LyricsPlayForward(i) {
         btn_element.attr('disabled', '');//设为禁用
         preset[i].status = 'PLAYING_FORWARD';
         var transition_time = preset[i].content[pcp].person * 1000;//读一下转场时间
+        if (transition_time > 3500) transition_time = 3500;
         SavePresetToLocal();
         RefreshKeyStatus(i);
         key2_timer = setTimeout(function (elem) {
