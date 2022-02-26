@@ -60,7 +60,7 @@
 		</div>
 
 		<h2>设置</h2>
-		<button id="import-export-button" mdui-dialog="{target: '#import-export-dialog'}"
+		<button onclick='imexAllOpened();' id="import-export-button" mdui-dialog="{target: '#import-export-dialog'}"
 			class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12 import-export-button">导入/导出设置</button>
 		<!--导入导出设置的对话框-->
 		<div id="import-export-dialog" class="mdui-dialog">
@@ -87,7 +87,7 @@
 			<div class="mdui-panel-item">
 				<div class="mdui-panel-item-header">KEY0</div>
 				<div class="mdui-panel-item-body">
-					<button id="import-export-key0-button" mdui-dialog="{target: '#import-export-key0-dialog'}"
+					<button onclick='imexOpened(0);' id="import-export-key0-button" mdui-dialog="{target: '#import-export-key0-dialog'}"
 						class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">导入/导出预设</button>
 					<div id="import-export-key0-dialog" class="mdui-dialog">
 						<div class="mdui-dialog-title">配置文件</div>
@@ -145,7 +145,7 @@
 			<div class="mdui-panel-item">
 				<div class="mdui-panel-item-header">KEY1</div>
 				<div class="mdui-panel-item-body">
-					<button id="import-export-key1-button" mdui-dialog="{target: '#import-export-key1-dialog'}"
+					<button  onclick='imexOpened(1);' id="import-export-key1-button" mdui-dialog="{target: '#import-export-key1-dialog'}"
 						class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">导入/导出预设</button>
 					<div id="import-export-key1-dialog" class="mdui-dialog">
 						<div class="mdui-dialog-title">配置文件</div>
@@ -203,7 +203,7 @@
 			<div class="mdui-panel-item">
 				<div class="mdui-panel-item-header">KEY2</div>
 				<div class="mdui-panel-item-body mdui-panel-item-open">
-					<button id="import-export-key2-button" mdui-dialog="{target: '#import-export-key2-dialog'}"
+					<button  onclick='imexOpened(2);' id="import-export-key2-button" mdui-dialog="{target: '#import-export-key2-dialog'}"
 						class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">导入/导出预设</button>
 					<div id="import-export-key2-dialog" class="mdui-dialog">
 						<div class="mdui-dialog-title">配置文件</div>
@@ -276,7 +276,7 @@
 			<div class="mdui-panel-item">
 				<div class="mdui-panel-item-header">KEY3</div>
 				<div class="mdui-panel-item-body">
-					<button id="import-export-key3-button" mdui-dialog="{target: '#import-export-key3-dialog'}"
+					<button  onclick='imexOpened(3);' id="import-export-key3-button" mdui-dialog="{target: '#import-export-key3-dialog'}"
 						class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">导入/导出预设</button>
 					<div id="import-export-key3-dialog" class="mdui-dialog">
 						<div class="mdui-dialog-title">配置文件</div>

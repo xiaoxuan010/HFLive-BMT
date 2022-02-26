@@ -31,9 +31,9 @@ function preset_init() {
 function RefreshContent() {
     preset_init();  //先读取一次数据
     for (var i = 0; i < 4; i++) {   //重复4次，每次设置一个key 
-        current_preset = preset[i].current_preset;  //当前使用的预设
-        current_content = preset[i].content[current_preset];
-        $(`#key${i}-name`).html(current_content.name);
+        var current_preset = preset[i].current_preset;  //当前使用的预设编号
+        var current_content = preset[i].content[current_preset];
+        $(`#key${i}-name`).text(current_content.name);
         if (i < 2)
             $(`#key${i}-person`).html(current_content.person);
 
