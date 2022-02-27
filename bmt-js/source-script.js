@@ -31,12 +31,8 @@ function preset_init() {
 function RefreshContent() {
     preset_init();  //先读取一次数据
     for (var i = 0; i < 4; i++) {   //重复4次，每次设置一个key 
-        var current_preset = preset[i].current_preset;  //当前使用的预设编号
-        var current_content = preset[i].content[current_preset];
-        lyricsShow(i, current_preset);
-        if (i < 2)
-            $(`#key${i}-person`).html(current_content.person);
-
+        var cp = preset[i].current_preset;  //当前使用的预设编号
+        lyricsShow(i);
 
         //设置转场时间
         if (preset[i].status == 'CLOSING' || preset[i].status == 'OPENING') {
@@ -60,7 +56,7 @@ function RefreshContent() {
             }
             case 'PLAYING_FORWARD': {
                 $(`#key${i}`).removeClass('hide');
-                lyricsPlay(i, current_preset);
+                lyricsPlay(i, cp);
             }
         }
 
@@ -68,13 +64,15 @@ function RefreshContent() {
 }
 
 //逐字出现
-function lyricsPlay(i, cp) {
+function lyricsPlay(i) {
+    var cp = preset[i].current_preset;
     var j = 0;
     $(`#key${i}-name`).empty();
-    var content = preset[i].content[cp].name;
-    var tTime = preset[i].content[cp].person * 1000;
-    if (tTime > 3000)
-        tTime = 3000;
+    var cl = preset[i].content[cp].current_lyrics;
+    var content = preset[i].content[cp].lyrics[cl].text;
+    var tTime = preset[i].content[cp].lyrics[cl].transition_time * 1000;
+    if (tTime > 4000)
+        tTime = 4000;
     var eTime = tTime / content.length;
     var PFtimer = setInterval(() => {
         var chr = content[j++];
@@ -101,20 +99,30 @@ function lyricsPlay(i, cp) {
     }, eTime);
 }
 //直接出现
-function lyricsShow(i, cp) {
-    var content = preset[i].content[cp].name;
-    if ($(`#key${i}-name`).text() == content) return;
-    $(`#key${i}-name`).empty();
-    for (var j = 0; j < content.length; j++) {
-        var chr = content[j];
-        var elem = document.createElement('span');
-        $(elem).text(chr);
-        $(elem).css({
-            'vertical-align': 'middle',
-            'text-align': 'center',
-            'display': 'inline-block',
-            'width': $(`#key${i}-name`).css('font-size')
-        })
-        $(`#key${i}-name`).append(elem);
+function lyricsShow(i) {
+    var cp = preset[i].current_preset;
+    if (i < 2) {
+        var content = preset[i].content[cp];
+        $(`#key${i}-name`).html(content.name);
+        $(`#key${i}-person`).html(content.person);
     }
+    else {
+        var cl = preset[i].content[cp].current_lyrics;
+        var content = preset[i].content[cp].lyrics[cl].text;
+        if ($(`#key${i}-name`).text() == content) return;
+        $(`#key${i}-name`).empty();
+        for (var j = 0; j < content.length; j++) {
+            var chr = content[j];
+            var elem = document.createElement('span');
+            $(elem).text(chr);
+            $(elem).css({
+                'vertical-align': 'middle',
+                'text-align': 'center',
+                'display': 'inline-block',
+                'width': $(`#key${i}-name`).css('font-size')
+            })
+            $(`#key${i}-name`).append(elem);
+        }
+    }
+
 }

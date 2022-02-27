@@ -13,3 +13,16 @@
 .bmt-status-100 {
     width: 100%;
 }
+
+.lyrics-list .mdui-list-item{
+    min-height: 25px;
+}
+
+.lyrics-list .mdui-list-item::after{
+    height: 25px;
+}
+
+.lyrics-list{
+    overflow-y: auto;
+    height: calc(343.179px - 48px - 36px - 4px * 2);
+}

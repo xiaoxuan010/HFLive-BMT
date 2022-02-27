@@ -13,12 +13,12 @@ var key2_timer, key3_timer;
 var $ = mdui.$;
 
 // 初始化函数
-preset_init();
+presetInit();
 
 //为方便阅读，如无特殊说明，代码中的变量i特指Key编号
 
 //初始化预设文件
-function preset_init() {
+function presetInit() {
     // 从本地读取
     var storage_preset = localStorage.getItem(preset_id);
     // 如果能读到就用本地的，否则用默认的，默认的存储在default-preset.js里
@@ -39,12 +39,22 @@ function preset_init() {
 
 //保存预设文件
 function SavePreset(i) {
-    var current_preset = $(`#key${i}-preset`).val();;
-    preset[i].current_preset = current_preset;  //存进preset
-    preset[i].content[current_preset] = {   //分别将序号、表演者、节目名存进preset
-        "num": $(`#key${i}-num`).val(),
-        "person": $(`#key${i}-person`).val(),
-        "name": $(`#key${i}-name`).val(),
+    var cp = preset[i].current_preset;
+    if (i < 2) {
+        // preset[i].current_preset = cp;  //存进preset
+        preset[i].content[cp] = {   //分别将序号、表演者、节目名存进preset
+            "num": $(`#key${i}-num`).val(),
+            "person": $(`#key${i}-person`).val(),
+            "name": $(`#key${i}-name`).val(),
+        }
+    }
+    else {
+        var cl = preset[i].content[cp].current_lyrics;
+        preset[i].content[cp].lyrics[cl] = {
+            "transition_time": $(`#key${i}-individual-transition-time`).val(),
+            "text": $(`#key${i}-text`).val()
+        }
+        RefreshLyricsList(i);
     }
     SavePresetToLocal();//将preset存进本地
 }
@@ -56,22 +66,89 @@ function PresetSwitched(i) {    //滑动条切换完毕后调用
     SavePresetToLocal();
 }
 
-//刷新设置，重置为Preset
+//刷新KEY设置为Preset
 function RefreshKeySettings(i) {
-    $(`#key${i}-onair-btn`).text(preset[i].key_name);   //设置按钮的文字
-    $(`#key${i}-preset`).attr('max', preset[i].content.length - 1);   //设置滑动条的最大值（因为包括0所以长度减一）
-    $(`#key${i}-preset`).val(preset[i].current_preset);
+    $(`#key${i}-onair-btn`).html(preset[i].key_name);   //设置按钮的文字
+    if (i < 2) {
+        $(`#key${i}-preset`).attr('max', preset[i].content.length - 1);   //设置滑动条的最大值（因为包括0所以长度减一）
+        $(`#key${i}-preset`).val(preset[i].current_preset);
+    }
+    else {
+        $(`#key${i}-preset`).empty();
+        for (var j = 0; j < preset[i].content.length; j++) {
+            var elem = document.createElement('a');
+            $(elem).text(preset[i].content[j].song_name);
+            $(`#key${i}-preset`).append(elem);
+        }
+        var tabInst = new mdui.Tab(`#key${i}-preset`);
+        tabInst.show(preset[i].current_preset);
+        RefreshLyricsList(i);
+    }
     $(`#key${i}-transition-time`).val(preset[i].transition_time); //读取转场时间，写入文本框
     mdui.updateSliders();//更新滑动条
 }
 
-//刷新预设文本框，重置为Preset
+//监听选项卡更改
+$(`#key2-preset`).on('change.mdui.tab', function (event) {
+    var current_song = event._detail.index;
+    preset[2].current_preset = current_song;
+    SavePresetToLocal();
+    RefreshLyricsList(2);
+});
+$(`#key3-preset`).on('change.mdui.tab', function (event) {
+    var current_song = event._detail.index;
+    preset[3].current_preset = current_song;
+    SavePresetToLocal();
+    RefreshLyricsList(3);
+});
+
+//刷新歌词列表
+function RefreshLyricsList(i) {
+    var cs = preset[i].current_preset;
+    $(`#key${i}-lyrics-list`).empty();
+    for (var j = 0; j < preset[i].content[cs].lyrics.length; j++) {
+        var elem = document.createElement('li');
+        $(elem).addClass('mdui-list-item mdui-ripple');
+        $(elem).text(preset[i].content[cs].lyrics[j].text);
+        $(elem).attr('id', `key${i}-song${cs}-lyrics-${j}`);
+        $(elem).data({
+            'LyricsIndex': j,
+            'KeyIndex': i
+        });
+        $(elem).attr('onclick', 'LyricsChange(this)')
+        $(`#key${i}-lyrics-list`).append(elem);
+        RefreshCurrentLyrics(i);
+    }
+}
+
+//切换高亮的歌词
+function RefreshCurrentLyrics(i) {
+    var cp = preset[i].current_preset;
+    var cl = preset[i].content[cp].current_lyrics;
+    $($(`#key${i}-lyrics-list`).children()).removeClass('mdui-list-item-active');
+    $(`#key${i}-song${cp}-lyrics-${cl}`).addClass('mdui-list-item-active');
+    $(`#key${i}-individual-transition-time`).val(preset[i].content[cp].lyrics[cl].transition_time);//读取歌词，写入文本框
+    $(`#key${i}-text`).val(preset[i].content[cp].lyrics[cl].text);//读取歌词，写入文本框
+}
+
+//切换歌词行
+function LyricsChange(elem) {
+    var i = $(elem).data('KeyIndex');
+    var cs = preset[i].current_preset;
+    preset[i].content[cs].current_lyrics = $(elem).data('LyricsIndex');
+    SavePresetToLocal();
+    RefreshCurrentLyrics(i);
+}
+
+//刷新预设Content
 function RefreshCurrentPreset(i) {
-    var current_preset = $(`#key${i}-preset`).val();
-    $(`#key${i}-num`).val(preset[i].content[current_preset].num);//读取序号，写入文本框
-    $(`#key${i}-person`).val(preset[i].content[current_preset].person);//读取表演者，写入文本框
-    $(`#key${i}-name`).val(preset[i].content[current_preset].name);//读取节目名，写入文本框
-    $(`#key${i}-current-preset-show`).html(current_preset);//把当前的预设号显示出来
+    var cp = $(`#key${i}-preset`).val();
+    if (i < 2) {
+        $(`#key${i}-num`).val(preset[i].content[cp].num);//读取序号，写入文本框
+        $(`#key${i}-person`).val(preset[i].content[cp].person);//读取表演者，写入文本框
+        $(`#key${i}-name`).val(preset[i].content[cp].name);//读取节目名，写入文本框
+        $(`#key${i}-current-preset-show`).html(cp);//把当前的预设号显示出来
+    }
 }
 
 //撤销更改
@@ -82,14 +159,27 @@ function UndoPreset(i) {
 //增加预设
 function addPreset(i) {
     SavePreset(i);
-    var preset_index = preset[i].content.push({ "num": "", "person": "", "name": "" }) - 1;//初始化预设，都是空的
-    preset[i].content[preset_index].num = preset_index;
-    preset[i].current_preset = preset_index;
-    if (i > 1) preset[i].content[preset_index].person = preset[i].transition_time;//对于KEY2、3，将person（表示动画时间）设为默认时间
-    $(`#key${i}-preset`).attr('max', preset_index);  //刷新滑块最大值
-    $(`#key${i}-preset`).val(preset_index); //将滑块的值设为长度
-    RefreshCurrentPreset(i);//刷新文本框
-    mdui.updateSliders();//更新滑块
+    if (i < 2) {
+        var preset_index = preset[i].content.push({ "num": "", "person": "", "name": "" }) - 1;//初始化预设，都是空的
+        preset[i].content[preset_index].num = preset_index;
+        preset[i].current_preset = preset_index;
+        $(`#key${i}-preset`).attr('max', preset_index);  //刷新滑块最大值
+        $(`#key${i}-preset`).val(preset_index); //将滑块的值设为长度
+        RefreshCurrentPreset(i);//刷新文本框
+        mdui.updateSliders();//更新滑块
+    }
+    else {
+        mdui.prompt('歌曲名', '添加新歌', function (value) {
+            var preset_index = preset[i].content.push({
+                "song_name": value,
+                "current_lyrics": 0,
+                "lyrics": []
+            });
+            preset[i].current_preset = preset_index - 1;
+            RefreshKeySettings(i);
+            SavePresetToLocal();
+        }, function () { return }, { confirmText: '创建', cancelText: '取消' });
+    }
     SavePresetToLocal();
 }
 
@@ -102,6 +192,30 @@ function deletePreset(i) {
     RefreshCurrentPreset(i);
     mdui.updateSliders();
     SavePresetToLocal();
+}
+
+//添加一行歌词
+function addLyrics(i) {
+    SavePreset(i);
+    var cp = preset[i].current_preset;
+    var cl = preset[i].content[cp].lyrics.push({
+        "transition_time": preset[i].transition_time,
+        "text": ''
+    }) - 1;
+    preset[i].content[cp].current_lyrics = cl;
+    SavePresetToLocal();
+    RefreshLyricsList(i);
+    document.getElementById(`key${i}-text`).focus();
+}
+
+//删除本行歌词
+function deleteLyrics(i) {
+    var cp = preset[i].current_preset;
+    var cl = preset[i].content[cp].current_lyrics;
+    preset[i].content[cp].lyrics.splice(cl, 1);
+    preset[i].content[cp].current_lyrics = --cl;
+    SavePresetToLocal();
+    RefreshLyricsList(i);
 }
 
 //将预设保存到本地存储
@@ -172,7 +286,7 @@ function imexOpened(i) {
 }
 
 //从文本框导入配置
-document.getElementById('import-export-dialog').addEventListener('confirm.mdui.dialog', function () {
+$('#import-export-dialog').on('confirm.mdui.dialog', function () {
     try {
         preset = JSON.parse($(`#imex-preset-textarea`).val());//尝试解析JSON
     } catch (err) {     //如果JSON格式不对就抛出异常
@@ -181,7 +295,7 @@ document.getElementById('import-export-dialog').addEventListener('confirm.mdui.d
         return;//结束函数
     }
     SavePresetToLocal();//没问题才会存进本地
-    preset_init();//用新的配置刷新
+    presetInit();//用新的配置刷新
     mdui.snackbar('保存成功');
 });
 
@@ -194,7 +308,7 @@ function importKeyPreset(i) {
         return;
     }
     SavePresetToLocal();//没问题才会存进本地
-    preset_init();//用新的配置刷新
+    presetInit();//用新的配置刷新
     mdui.snackbar('保存成功');
 }
 
@@ -208,50 +322,48 @@ function CopyPresetText(id) {
 
 //KEY2、3歌词控制
 function LyricsBack(i) {
-    var pcp = parseInt(preset[i].current_preset);
-    if (pcp == 0) {
+    var cp = preset[i].current_preset;
+    var pcl = preset[i].content[cp].current_lyrics;
+    if (pcl == 0) {
         mdui.snackbar('已到达首句歌词');
     }
     else {
-        pcp--;
-        preset[i].current_preset = pcp;
-        $(`#key${i}-preset`).val(pcp);
-        mdui.updateSliders();
-        RefreshCurrentPreset(i);
+        pcl--;
+        preset[i].content[cp].current_lyrics = pcl;
         SavePresetToLocal();
+        RefreshCurrentPreset(i);
     }
 }
 function LyricsForward(i) {
-    var pcp = parseInt(preset[i].current_preset);
-    if (pcp == preset[i].content.length - 1) {
+    var cp = preset[i].current_preset;
+    var pcl = preset[i].content[cp].current_lyrics;
+    if (pcl == preset[i].content[cp].lyrics.length - 1) {
         mdui.snackbar('已到达末尾歌词');
     }
     else {
-        pcp++;
-        preset[i].current_preset = pcp;
-        $(`#key${i}-preset`).val(pcp);
-        mdui.updateSliders();
-        RefreshCurrentPreset(i);
+        pcl++;
+        preset[i].content[cp].current_lyrics = pcl;
         SavePresetToLocal();
+        RefreshCurrentLyrics(i);
     }
 }
 function LyricsPlayForward(i) {
-    var pcp = parseInt(preset[i].current_preset);
-    if (pcp == preset[i].content.length - 1) {
+    var cp = preset[i].current_preset;
+    var pcl = preset[i].content[cp].current_lyrics;
+    if (pcl == preset[i].content[cp].lyrics.length - 1) {
         mdui.snackbar('已到达末尾歌词');
     }
     else {
-        pcp++;
-        preset[i].current_preset = pcp;
-        $(`#key${i}-preset`).val(pcp);
-        mdui.updateSliders();
-        RefreshCurrentPreset(i);
+        pcl++;
+        preset[i].content[cp].current_lyrics = pcl;
+        SavePresetToLocal();
+        RefreshCurrentLyrics(i);
 
         var btn_element = $(`#key${i}-lyrics-play-forward-btn`);//先获得那个按钮
         btn_element.attr('disabled', '');//设为禁用
         preset[i].status = 'PLAYING_FORWARD';
-        var transition_time = preset[i].content[pcp].person * 1000;//读一下转场时间
-        if (transition_time > 3500) transition_time = 3500;
+        var transition_time = preset[i].content[cp].lyrics[pcl].transition_time * 1000;//读一下转场时间
+        if (transition_time > 4000) transition_time = 4000;
         SavePresetToLocal();
         RefreshKeyStatus(i);
         key2_timer = setTimeout(function (elem) {
@@ -262,4 +374,9 @@ function LyricsPlayForward(i) {
         }, transition_time, btn_element);//转场完之后取消禁用
     }
 
+}
+
+//调试用：清除设置
+function rm() {
+    localStorage.removeItem(preset_id);
 }

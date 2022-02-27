@@ -7,59 +7,104 @@
  */
 var default_preset = [
     {
-        "key_num":"0",
-        "key_name":"KEY0",
-        "status":"closed",
-        "transition_time":"1",
-        "content":[
+        "key_num": "0",
+        "key_name": "KEY0",
+        "status": "CLOSED",
+        "transition_time": "1",
+        "content": [
             {
-                "num":"0",
-                "person":"表演者",
-                "name":"节目名"
+                "num": "0",
+                "person": "表演者",
+                "name": "节目名"
             }
         ],
-        "current_preset":"0"
+        "current_preset": "0"
     },
     {
-        "key_num":"1",
-        "key_name":"KEY1",
-        "status":"closed",
-        "transition_time":"1",
-        "content":[
+        "key_num": "1",
+        "key_name": "KEY1",
+        "status": "CLOSED",
+        "transition_time": "1",
+        "content": [
             {
-                "num":"0",
-                "person":"表演者",
-                "name":"节目名"
+                "num": "0",
+                "person": "表演者",
+                "name": "节目名"
             }
         ],
-        "current_preset":"0"
+        "current_preset": "0"
     },
     {
-        "key_num":"2",
-        "key_name":"KEY2",
-        "status":"closed",
-        "transition_time":"1",
-        "content":[
+        "key_num": "2",
+        "key_name": "KEY2",
+        "status": "CLOSED",
+        "transition_time": "1",
+        "current_preset": "0",
+        "content": [
             {
-                "num":"0",
-                "transition_time":"1s",
-                "name":"也许世界就这样"
-            }
-        ],
-        "current_preset":"0"
+                'song_name': "你的答案",
+                "current_lyrics": 0,
+                'lyrics': [
+                    {
+                        "transition_time": "1",
+                        "text": "也许世界就这样"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我也还在路上"
+                    }
+                ]
+            },
+            {
+                'song_name': "海阔天空",
+                "current_lyrics": 0,
+                'lyrics': [
+                    {
+                        "transition_time": "1",
+                        "text": "今天我"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "寒夜里看雪飘过"
+                    }
+                ]
+            }]
     },
     {
-        "key_num":"3",
-        "key_name":"KEY3",
-        "status":"closed",
-        "transition_time":"1",
-        "content":[
+        "key_num": "3",
+        "key_name": "KEY3",
+        "status": "CLOSED",
+        "transition_time": "1",
+        "current_preset": 0,
+        "content": [
             {
-                "num":"0",
-                "transition_time":"1s",
-                "name":"我也还在路上"
+                'song_name': "你的答案",
+                "current_lyrics": 0,
+                'lyrics': [
+                    {
+                        "transition_time": "1",
+                        "text": "也许世界就这样"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我也还在路上"
+                    }
+                ]
+            },
+            {
+                'song_name': "海阔天空",
+                "current_lyrics": 0,
+                'lyrics': [
+                    {
+                        "transition_time": "1",
+                        "text": "今天我"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "寒夜里看雪飘过"
+                    }
+                ]
             }
-        ],
-        "current_preset":"0"
+        ]
     }
 ];
