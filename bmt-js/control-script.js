@@ -198,11 +198,10 @@ function deletePreset(i) {
 function addLyrics(i) {
     SavePreset(i);
     var cp = preset[i].current_preset;
-    var cl = preset[i].content[cp].current_lyrics;
-    preset[i].content[cp].lyrics.splice(cl,0,{
+    var cl = preset[i].content[cp].lyrics.push({
         "transition_time": preset[i].transition_time,
         "text": ''
-    });
+    }) - 1;
     preset[i].content[cp].current_lyrics = cl;
     SavePresetToLocal();
     RefreshLyricsList(i);
@@ -357,12 +356,12 @@ function LyricsPlayForward(i) {
     else {
         pcl++;
         preset[i].content[cp].current_lyrics = pcl;
-        preset[i].status = 'PLAYING_FORWARD';
         SavePresetToLocal();
         RefreshCurrentLyrics(i);
 
         var btn_element = $(`#key${i}-lyrics-play-forward-btn`);//先获得那个按钮
         btn_element.attr('disabled', '');//设为禁用
+        preset[i].status = 'PLAYING_FORWARD';
         var transition_time = preset[i].content[cp].lyrics[pcl].transition_time * 1000;//读一下转场时间
         if (transition_time > 4000) transition_time = 4000;
         SavePresetToLocal();
