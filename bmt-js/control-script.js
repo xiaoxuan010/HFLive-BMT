@@ -294,20 +294,20 @@ function imexOpened(i) {
     $(`#imex-key${i}-preset-textarea`).val(JSON.stringify(preset[i]));
 }
 
-//从文本框导入配置
-// $('#import-export-dialog').on('confirm.mdui.dialog', function () {
-//     try {
-//         preset = JSON.parse($(`#imex-preset-textarea`).val());//尝试解析JSON
-//     } catch (err) {     //如果JSON格式不对就抛出异常
-//         console.log(err);
-//         mdui.alert('输入的配置文件不合法，详见浏览器Console.', '修改未生效');
-//         return;//结束函数
-//     }
-//     SavePresetToLocal();//没问题才会存进本地
-//     presetInit();//用新的配置刷新
-//     mdui.snackbar('保存成功');
-// });
-
+// 从文本框导入全局配置
+$('#import-export-dialog').on('confirm.mdui.dialog', function () {
+    try {
+        preset = JSON.parse($(`#imex-preset-textarea`).val());//尝试解析JSON
+    } catch (err) {     //如果JSON格式不对就抛出异常
+        console.log(err);
+        mdui.alert('输入的配置文件不合法，详见浏览器Console.', '修改未生效');
+        return;//结束函数
+    }
+    SavePresetToLocal();//没问题才会存进本地
+    presetInit();//用新的配置刷新
+    mdui.snackbar('保存成功');
+});
+//导入单KEY配置
 function importKeyPreset(i) {
     try {
         preset[i] = JSON.parse($(`#imex-key${i}-preset-textarea`).val());
