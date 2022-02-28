@@ -131,7 +131,8 @@ function LyricsChange(elem) {
     var cs = preset[i].current_preset;
     preset[i].content[cs].current_lyrics = $(elem).data('LyricsIndex');
     // SavePresetToLocal();
-    LyricsPlay(i);
+    if (preset[i].status == 'OPENED' && !$(`#key${i}-lyrics-play-forward-btn`).attr('disabled'))
+        LyricsPlay(i);
     RefreshCurrentLyrics(i);
 }
 
@@ -294,18 +295,18 @@ function imexOpened(i) {
 }
 
 //从文本框导入配置
-$('#import-export-dialog').on('confirm.mdui.dialog', function () {
-    try {
-        preset = JSON.parse($(`#imex-preset-textarea`).val());//尝试解析JSON
-    } catch (err) {     //如果JSON格式不对就抛出异常
-        console.log(err);
-        mdui.alert('输入的配置文件不合法，详见浏览器Console.', '修改未生效');
-        return;//结束函数
-    }
-    SavePresetToLocal();//没问题才会存进本地
-    presetInit();//用新的配置刷新
-    mdui.snackbar('保存成功');
-});
+// $('#import-export-dialog').on('confirm.mdui.dialog', function () {
+//     try {
+//         preset = JSON.parse($(`#imex-preset-textarea`).val());//尝试解析JSON
+//     } catch (err) {     //如果JSON格式不对就抛出异常
+//         console.log(err);
+//         mdui.alert('输入的配置文件不合法，详见浏览器Console.', '修改未生效');
+//         return;//结束函数
+//     }
+//     SavePresetToLocal();//没问题才会存进本地
+//     presetInit();//用新的配置刷新
+//     mdui.snackbar('保存成功');
+// });
 
 function importKeyPreset(i) {
     try {
@@ -318,6 +319,33 @@ function importKeyPreset(i) {
     SavePresetToLocal();//没问题才会存进本地
     presetInit();//用新的配置刷新
     mdui.snackbar('保存成功');
+}
+
+//以文本编辑歌词
+function editLyrics(i) {
+    var cp = preset[i].current_preset;
+    var arr = preset[i].content[cp].lyrics;
+    var lyrics = '';
+    $.each(arr, function () {
+        lyrics += this.text + '\n';
+    });
+    // console.log(lyrics);
+    $(`#key${i}-edit-lyrics-textarea`).val(lyrics);
+}
+
+function importLyrics(i) {
+    var cp = preset[i].current_preset;
+    var arr = $(`#key${i}-edit-lyrics-textarea`).val().split('\n');
+    // console.log(arr);
+    preset[i].content[cp].lyrics = [];
+    $.each(arr, function (index, value) {
+        preset[i].content[cp].lyrics.push({
+            "transition_time": preset[i].transition_time,
+            "text": value
+        });
+    })
+    SavePresetToLocal();
+    RefreshLyricsList(i);
 }
 
 //拷贝输入框文本

@@ -193,8 +193,39 @@
 			<!-- KEY 2 -->
 			<div class="mdui-panel-item mdui-panel-item-open">
 				<div class="mdui-panel-item-header">KEY2</div>
+				<div id="import-export-key2-dialog" class="mdui-dialog">
+					<div class="mdui-dialog-title">配置文件</div>
+					<div class="mdui-dialog-content">
+						<div class="mdui-textfield">
+							<textarea id="imex-key2-preset-textarea" rows="4" class="mdui-textfield-input"
+								placeholder="在此处输入JSON配置文件"></textarea>
+						</div>
+					</div>
+					<div class="mdui-dialog-actions mdui-dialog-actions-stacked">
+						<button class="mdui-btn mdui-ripple" mdui-dialog-cancel>放弃更改</button>
+						<button class="mdui-btn mdui-ripple" onclick="CopyPresetText('imex-key2-preset-textarea');"
+							mdui-dialog-close>拷贝到剪贴板</button>
+						<button onclick="importKeyPreset(2);" class="mdui-btn mdui-ripple"
+							mdui-dialog-confirm>保存配置并关闭</button>
+					</div>
+				</div>
+				<div id="key2-edit-lyrics-dialog" class="mdui-dialog">
+					<div class="mdui-dialog-title">编辑歌词</div>
+					<div class="mdui-dialog-content">
+						<div class="mdui-textfield">
+							<textarea id="key2-edit-lyrics-textarea" rows="8" class="mdui-textfield-input"
+								placeholder="在此处输入歌词"></textarea>
+						</div>
+					</div>
+					<div class="mdui-dialog-actions mdui-dialog-actions-stacked">
+						<button class="mdui-btn mdui-ripple" mdui-dialog-cancel>放弃更改</button>
+						<button class="mdui-btn mdui-ripple" onclick="CopyPresetText('key2-edit-lyrics-textarea');"
+							mdui-dialog-close>拷贝到剪贴板</button>
+						<button onclick="importLyrics(2);" class="mdui-btn mdui-ripple"
+							mdui-dialog-confirm>保存歌词并关闭</button>
+					</div>
+				</div>
 				<div class="mdui-panel-item-body">
-
 					<div class="mdui-row lyrics-row">
 						<div class="mdui-col-xs-12 mdui-col-sm-6 ">
 							<!-- 歌曲列表 -->
@@ -204,33 +235,19 @@
 								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">删除本曲</button>
 							<button id="key2-add-preset" onclick="addPreset(2);"
 								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">添加新歌</button>
+							<button onclick='imexOpened(2);' id="import-export-key2-button"
+								mdui-dialog="{target: '#import-export-key2-dialog'}"
+								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">JSON编辑</button>
+							<button onclick='editLyrics(2);' id="import-export-key2-button"
+								mdui-dialog="{target: '#key2-edit-lyrics-dialog'}"
+								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">纯文本编辑</button>
+
 							<!-- 歌词列表 -->
 							<ul id="key2-lyrics-list" class="mdui-list mdui-list-dense lyrics-list"></ul>
 
 
 						</div>
 						<div class="mdui-col-xs-12 mdui-col-sm-6">
-							<button onclick='imexOpened(2);' id="import-export-key2-button"
-								mdui-dialog="{target: '#import-export-key2-dialog'}"
-								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">JSON设置</button>
-							<div id="import-export-key2-dialog" class="mdui-dialog">
-								<div class="mdui-dialog-title">配置文件</div>
-								<div class="mdui-dialog-content">
-									<div class="mdui-textfield">
-										<textarea id="imex-key2-preset-textarea" rows="4" class="mdui-textfield-input"
-											placeholder="在此处输入JSON配置文件"></textarea>
-									</div>
-								</div>
-								<div class="mdui-dialog-actions mdui-dialog-actions-stacked">
-									<button class="mdui-btn mdui-ripple" mdui-dialog-cancel>放弃更改</button>
-									<button class="mdui-btn mdui-ripple"
-										onclick="CopyPresetText('imex-key2-preset-textarea');"
-										mdui-dialog-close>拷贝到剪贴板</button>
-									<button onclick="importKeyPreset(2);" class="mdui-btn mdui-ripple"
-										mdui-dialog-confirm>保存配置并关闭</button>
-								</div>
-							</div>
-
 							<div class="mdui-textfield key-num">
 								<label class="mdui-textfield-label">默认动画时间（s)</label>
 								<input id="key2-transition-time" onchange="SaveKeySettings(2);"

@@ -78,7 +78,7 @@ function lyricsPlay(i) {
     if (tTime > 4000)
         tTime = 4000;
     var eTime = tTime / content.length;
-    $(`#key${i},#key${i}>*`).css('transition', `ease ${tTime / 5}ms`);
+    $(`#key${i},#key${i}>*`).css('transition', `ease ${tTime / 10}ms`);
     $(`#key${i}`).addClass('hide');
 
     setTimeout(function () {
@@ -110,7 +110,7 @@ function lyricsPlay(i) {
                 return;
             }
         }, eTime);
-    }, tTime / 5);
+    }, tTime / 10);
 
 
 }
