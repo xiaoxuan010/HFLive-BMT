@@ -9,6 +9,7 @@
 //全局变量
 var preset;
 const preset_id = "hflive-bmt-preset";
+var stillPlayingFlag = [false, false, false, false];
 var $ = mdui.$;
 
 //监听数据变动
@@ -17,7 +18,7 @@ window.addEventListener('storage', RefreshContent);//有本地数据变动时调
 //初始化调用
 RefreshContent();
 
-function preset_init() {
+function presetInit() {
     var storage_preset = localStorage.getItem(preset_id);//从浏览器存储中读取数据，格式为JSON字符串
     if (storage_preset != null) {//如果不为空，即本地有数据
         preset = JSON.parse(storage_preset);//使用本地数据
@@ -29,9 +30,11 @@ function preset_init() {
 
 //刷新所有内容
 function RefreshContent() {
-    preset_init();  //先读取一次数据
+    presetInit();  //先读取一次数据
     for (var i = 0; i < 4; i++) {   //重复4次，每次设置一个key 
-        var cp = preset[i].current_preset;  //当前使用的预设编号
+        if (stillPlayingFlag[i])
+            continue;
+        // var cp = preset[i].current_preset;  //当前使用的预设编号
         if (i < 2 || preset[i].status == 'OPENED' || preset[i].status == 'CLOSED') {
             lyricsShow(i);
         }
@@ -57,7 +60,6 @@ function RefreshContent() {
                 break;
             }
             case 'PLAYING_FORWARD': {
-                $(`#key${i}`).removeClass('hide');
                 lyricsPlay(i);
             }
         }
@@ -67,38 +69,50 @@ function RefreshContent() {
 
 //逐字出现
 function lyricsPlay(i) {
+    stillPlayingFlag[i] = true;
     var cp = preset[i].current_preset;
     var j = 0;
-    $(`#key${i}-name`).empty();
     var cl = preset[i].content[cp].current_lyrics;
     var content = preset[i].content[cp].lyrics[cl].text;
     var tTime = preset[i].content[cp].lyrics[cl].transition_time * 1000;
     if (tTime > 4000)
         tTime = 4000;
     var eTime = tTime / content.length;
-    var PFtimer = setInterval(() => {
-        var chr = content[j++];
-        var elem = document.createElement('span');
-        $(elem).text(chr);
-        $(elem).addClass('hide');
-        $(elem).css({
-            'font-size': '0em',
-            'transition': `${eTime * 3}ms ease`,
-            'vertical-align': 'middle',
-            'text-align': 'center',
-            'display': 'inline-block',
-            'width': $(`#key${i}-name`).css('font-size')
-        })
-        $(`#key${i}-name`).append(elem);
-        setTimeout(function () {
-            $(elem).removeClass('hide');
-            $(elem).css('font-size', 'inherit');
-        }, 100);
-        if (j > content.length) {
-            clearInterval(PFtimer);
-            return;
-        }
-    }, eTime);
+    $(`#key${i},#key${i}>*`).css('transition', `ease ${tTime / 5}ms`);
+    $(`#key${i}`).addClass('hide');
+
+    setTimeout(function () {
+        $(`#key${i}-name`).empty();
+        $(`#key${i},#key${i}>*`).css('transition', 'unset');
+        $(`#key${i}`).removeClass('hide');
+        var PFtimer = setInterval(() => {
+            var chr = content[j++];
+            var elem = document.createElement('span');
+            $(elem).text(chr);
+            $(elem).addClass('hide');
+            $(elem).css({
+                'font-size': '0em',
+                'transition': `${eTime * 3}ms ease`,
+                'vertical-align': 'middle',
+                'text-align': 'center',
+                'display': 'inline-block',
+                'width': $(`#key${i}-name`).css('font-size')
+            })
+            $(`#key${i}-name`).append(elem);
+            setTimeout(function () {
+                $(elem).removeClass('hide');
+                $(elem).css('font-size', 'inherit');
+            }, 100);
+            if (j > content.length) {
+                clearInterval(PFtimer);
+                PFtimer = null;
+                stillPlayingFlag[i] = false;
+                return;
+            }
+        }, eTime);
+    }, tTime / 5);
+
+
 }
 //直接出现
 function lyricsShow(i) {

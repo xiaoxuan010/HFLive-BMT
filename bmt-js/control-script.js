@@ -62,8 +62,13 @@ function SavePreset(i) {
 //切换Preset
 function PresetSwitched(i) {    //滑动条切换完毕后调用
     preset[i].current_preset = $(`#key${i}-preset`).val();
-    mdui.updateSliders();
     SavePresetToLocal();
+    if (i < 2) {
+        mdui.updateSliders();
+    }
+    else {
+        RefreshLyricsList(i);
+    }
 }
 
 //刷新KEY设置为Preset
@@ -72,35 +77,24 @@ function RefreshKeySettings(i) {
     if (i < 2) {
         $(`#key${i}-preset`).attr('max', preset[i].content.length - 1);   //设置滑动条的最大值（因为包括0所以长度减一）
         $(`#key${i}-preset`).val(preset[i].current_preset);
+        mdui.updateSliders();//更新滑动条
     }
     else {
         $(`#key${i}-preset`).empty();
         for (var j = 0; j < preset[i].content.length; j++) {
-            var elem = document.createElement('a');
+            var elem = document.createElement('option');
+            $(elem).val(j);
             $(elem).text(preset[i].content[j].song_name);
             $(`#key${i}-preset`).append(elem);
         }
-        var tabInst = new mdui.Tab(`#key${i}-preset`);
-        tabInst.show(preset[i].current_preset);
+        $(`#key${i}-preset`).val(preset[i].current_preset);
+        mdui.mutation();
+        // var selectInst = new mdui.Select(`#key${i}-preset`);
+        // selectInst.handleUpdate();
         RefreshLyricsList(i);
     }
     $(`#key${i}-transition-time`).val(preset[i].transition_time); //读取转场时间，写入文本框
-    mdui.updateSliders();//更新滑动条
 }
-
-//监听选项卡更改
-$(`#key2-preset`).on('change.mdui.tab', function (event) {
-    var current_song = event._detail.index;
-    preset[2].current_preset = current_song;
-    SavePresetToLocal();
-    RefreshLyricsList(2);
-});
-$(`#key3-preset`).on('change.mdui.tab', function (event) {
-    var current_song = event._detail.index;
-    preset[3].current_preset = current_song;
-    SavePresetToLocal();
-    RefreshLyricsList(3);
-});
 
 //刷新歌词列表
 function RefreshLyricsList(i) {
@@ -136,7 +130,8 @@ function LyricsChange(elem) {
     var i = $(elem).data('KeyIndex');
     var cs = preset[i].current_preset;
     preset[i].content[cs].current_lyrics = $(elem).data('LyricsIndex');
-    SavePresetToLocal();
+    // SavePresetToLocal();
+    LyricsPlay(i);
     RefreshCurrentLyrics(i);
 }
 
@@ -149,11 +144,6 @@ function RefreshCurrentPreset(i) {
         $(`#key${i}-name`).val(preset[i].content[cp].name);//读取节目名，写入文本框
         $(`#key${i}-current-preset-show`).html(cp);//把当前的预设号显示出来
     }
-}
-
-//撤销更改
-function UndoPreset(i) {
-    RefreshCurrentPreset(i);//相当于刷新一遍文本框
 }
 
 //增加预设
@@ -176,8 +166,8 @@ function addPreset(i) {
                 "lyrics": []
             });
             preset[i].current_preset = preset_index - 1;
-            RefreshKeySettings(i);
             SavePresetToLocal();
+            RefreshKeySettings(i);
         }, function () { return }, { confirmText: '创建', cancelText: '取消' });
     }
     SavePresetToLocal();
@@ -185,20 +175,26 @@ function addPreset(i) {
 
 //删除预设
 function deletePreset(i) {
-    var current_preset = $(`#key${i}-preset`).val();//先读出现在的预设号
-    preset[i].content.splice(current_preset, 1);//从预设号开始删除1项
-    $(`#key${i}-preset`).val(current_preset - 1);
-    $(`#key${i}-preset`).attr('max', preset[i].content.length - 1)
-    RefreshCurrentPreset(i);
-    mdui.updateSliders();
+    var cp = $(`#key${i}-preset`).val();//先读出现在的预设号
+    preset[i].content.splice(cp--, 1);//从预设号开始删除1项
+    $(`#key${i}-preset`).val(cp);
+    preset[i].current_preset = cp;
     SavePresetToLocal();
+    if (i < 2) {
+        $(`#key${i}-preset`).attr('max', preset[i].content.length - 1);
+        RefreshCurrentPreset(i);
+        mdui.updateSliders();
+    }
+    else {
+        RefreshKeySettings(i);
+    }
 }
 
 //追加一行歌词
 function addLyrics(i) {
     SavePreset(i);
     var cp = preset[i].current_preset;
-    preset[i].content[cp].lyrics.splice(++preset[i].content[cp].current_lyrics,0,{
+    preset[i].content[cp].lyrics.splice(++preset[i].content[cp].current_lyrics, 0, {
         "transition_time": preset[i].transition_time,
         "text": ''
     });
@@ -211,7 +207,7 @@ function insertLyrics(i) {
     SavePreset(i);
     var cp = preset[i].current_preset;
     var cl = preset[i].content[cp].current_lyrics;
-    preset[i].content[cp].lyrics.splice(cl,0,{
+    preset[i].content[cp].lyrics.splice(cl, 0, {
         "transition_time": preset[i].transition_time,
         "text": ''
     });
@@ -361,31 +357,34 @@ function LyricsForward(i) {
 }
 function LyricsPlayForward(i) {
     var cp = preset[i].current_preset;
-    var pcl = preset[i].content[cp].current_lyrics;
-    if (pcl == preset[i].content[cp].lyrics.length - 1) {
+    if (preset[i].content[cp].current_lyrics == preset[i].content[cp].lyrics.length - 1) {
         mdui.snackbar('已到达末尾歌词');
     }
     else {
-        pcl++;
-        preset[i].content[cp].current_lyrics = pcl;
-        SavePresetToLocal();
-        RefreshCurrentLyrics(i);
+        preset[i].content[cp].current_lyrics++;
+        LyricsPlay(i);
+    }
+}
 
-        var btn_element = $(`#key${i}-lyrics-play-forward-btn`);//先获得那个按钮
-        btn_element.attr('disabled', '');//设为禁用
-        preset[i].status = 'PLAYING_FORWARD';
-        var transition_time = preset[i].content[cp].lyrics[pcl].transition_time * 1000;//读一下转场时间
-        if (transition_time > 4000) transition_time = 4000;
+function LyricsPlay(i) {
+    var cp = preset[i].current_preset;
+    var cl = preset[i].content[cp].current_lyrics;
+    preset[i].content[cp].current_lyrics = cl;
+
+    var btn_element = $(`#key${i}-lyrics-play-forward-btn`);//先获得那个按钮
+    btn_element.attr('disabled', '');//设为禁用
+    preset[i].status = 'PLAYING_FORWARD';
+    var transition_time = preset[i].content[cp].lyrics[cl].transition_time * 1000;//读一下转场时间
+    if (transition_time > 4000) transition_time = 4000;
+    SavePresetToLocal();
+    RefreshCurrentLyrics(i);
+    RefreshKeyStatus(i);
+    key2_timer = setTimeout(function (elem) {
+        elem.removeAttr('disabled');
+        preset[i].status = 'OPENED';
         SavePresetToLocal();
         RefreshKeyStatus(i);
-        key2_timer = setTimeout(function (elem) {
-            elem.removeAttr('disabled');
-            preset[i].status = 'OPENED';
-            SavePresetToLocal();
-            RefreshKeyStatus(i);
-        }, transition_time, btn_element);//转场完之后取消禁用
-    }
-
+    }, transition_time, btn_element);//转场完之后取消禁用
 }
 
 //调试用：清除设置

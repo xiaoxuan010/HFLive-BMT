@@ -198,14 +198,16 @@
 					<div class="mdui-row lyrics-row">
 						<div class="mdui-col-xs-12 mdui-col-sm-6 ">
 							<!-- 歌曲列表 -->
-							<div id="key2-preset" class="mdui-tab mdui-tab-scrollable" mdui-tab></div>
-							<!-- 歌词列表 -->
-							<ul id="key2-lyrics-list" class="mdui-list mdui-list-dense lyrics-list"></ul>
-
+							<select id="key2-preset" onchange="PresetSwitched(2)" class="mdui-select"
+								mdui-select="{position: 'bottom'}"></select>
 							<button id="key2-delete-preset" onclick="deletePreset(2);"
 								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">删除本曲</button>
 							<button id="key2-add-preset" onclick="addPreset(2);"
 								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">添加新歌</button>
+							<!-- 歌词列表 -->
+							<ul id="key2-lyrics-list" class="mdui-list mdui-list-dense lyrics-list"></ul>
+
+
 						</div>
 						<div class="mdui-col-xs-12 mdui-col-sm-6">
 							<button onclick='imexOpened(2);' id="import-export-key2-button"
@@ -260,9 +262,9 @@
 
 							<button id="key2-delete-preset" onclick="deleteLyrics(2);"
 								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">删除本行</button>
-								<button id="key2-add-preset" onclick="insertLyrics(2);"
+							<button id="key2-add-preset" onclick="insertLyrics(2);"
 								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">插入一行</button>
-								<button id="key2-add-preset" onclick="addLyrics(2);"
+							<button id="key2-add-preset" onclick="addLyrics(2);"
 								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">追加一行</button>
 						</div>
 					</div>
