@@ -194,15 +194,27 @@ function deletePreset(i) {
     SavePresetToLocal();
 }
 
-//添加一行歌词
+//追加一行歌词
 function addLyrics(i) {
     SavePreset(i);
     var cp = preset[i].current_preset;
-    var cl = preset[i].content[cp].lyrics.push({
+    preset[i].content[cp].lyrics.splice(++preset[i].content[cp].current_lyrics,0,{
         "transition_time": preset[i].transition_time,
         "text": ''
-    }) - 1;
-    preset[i].content[cp].current_lyrics = cl;
+    });
+    SavePresetToLocal();
+    RefreshLyricsList(i);
+    document.getElementById(`key${i}-text`).focus();
+}
+//插入一行歌词
+function insertLyrics(i) {
+    SavePreset(i);
+    var cp = preset[i].current_preset;
+    var cl = preset[i].content[cp].current_lyrics;
+    preset[i].content[cp].lyrics.splice(cl,0,{
+        "transition_time": preset[i].transition_time,
+        "text": ''
+    });
     SavePresetToLocal();
     RefreshLyricsList(i);
     document.getElementById(`key${i}-text`).focus();
@@ -379,4 +391,5 @@ function LyricsPlayForward(i) {
 //调试用：清除设置
 function rm() {
     localStorage.removeItem(preset_id);
+    location.reload();
 }
