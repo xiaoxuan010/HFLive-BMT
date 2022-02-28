@@ -32,7 +32,9 @@ function RefreshContent() {
     preset_init();  //先读取一次数据
     for (var i = 0; i < 4; i++) {   //重复4次，每次设置一个key 
         var cp = preset[i].current_preset;  //当前使用的预设编号
-        lyricsShow(i);
+        if (i < 2 || preset[i].status == 'OPENED' || preset[i].status == 'CLOSED') {
+            lyricsShow(i);
+        }
 
         //设置转场时间
         if (preset[i].status == 'CLOSING' || preset[i].status == 'OPENING') {
@@ -56,7 +58,7 @@ function RefreshContent() {
             }
             case 'PLAYING_FORWARD': {
                 $(`#key${i}`).removeClass('hide');
-                lyricsPlay(i, cp);
+                lyricsPlay(i);
             }
         }
 
