@@ -176,19 +176,24 @@ function addPreset(i) {
 
 //删除预设
 function deletePreset(i) {
-    var cp = $(`#key${i}-preset`).val();//先读出现在的预设号
-    preset[i].content.splice(cp--, 1);//从预设号开始删除1项
-    $(`#key${i}-preset`).val(cp);
-    preset[i].current_preset = cp;
-    SavePresetToLocal();
-    if (i < 2) {
-        $(`#key${i}-preset`).attr('max', preset[i].content.length - 1);
-        RefreshCurrentPreset(i);
-        mdui.updateSliders();
-    }
-    else {
-        RefreshKeySettings(i);
-    }
+    mdui.confirm('确定要删除吗？',function(){
+        var cp = $(`#key${i}-preset`).val();//先读出现在的预设号
+        preset[i].content.splice(cp--, 1);//从预设号开始删除1项
+        $(`#key${i}-preset`).val(cp);
+        preset[i].current_preset = cp;
+        SavePresetToLocal();
+        if (i < 2) {
+            $(`#key${i}-preset`).attr('max', preset[i].content.length - 1);
+            RefreshCurrentPreset(i);
+            mdui.updateSliders();
+        }
+        else {
+            RefreshKeySettings(i);
+        }
+    },function(){
+        mdui.snackbar('已取消删除');
+    },{confirmText:'确定删除',cancelText:'取消'});
+    
 }
 
 //追加一行歌词
