@@ -232,15 +232,20 @@
 							<select id="key2-preset" onchange="PresetSwitched(2)" class="mdui-select"
 								mdui-select="{position: 'bottom'}"></select>
 							<button id="key2-delete-preset" onclick="deletePreset(2);"
-								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">删除本曲</button>
+								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12 mdui-btn-icon"><i
+									class="mdui-icon material-icons">delete_sweep</i></button>
 							<button id="key2-add-preset" onclick="addPreset(2);"
-								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">添加新歌</button>
+								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12 mdui-btn-icon"><i
+									class="mdui-icon material-icons">playlist_add</i></button>
 							<button onclick='imexOpened(2);' id="import-export-key2-button"
 								mdui-dialog="{target: '#import-export-key2-dialog'}"
-								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">JSON编辑</button>
+								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12 mdui-btn-icon"><i
+									class="mdui-icon material-icons">settings_ethernet</i></button>
 							<button onclick='editLyrics(2);' id="import-export-key2-button"
 								mdui-dialog="{target: '#key2-edit-lyrics-dialog'}"
-								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12">纯文本编辑</button>
+								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12 mdui-btn-icon"><i
+									class="mdui-icon material-icons">create</i></button>
+
 
 							<!-- 歌词列表 -->
 							<ul id="key2-lyrics-list" class="mdui-list mdui-list-dense lyrics-list"></ul>
@@ -248,11 +253,6 @@
 
 						</div>
 						<div class="mdui-col-xs-12 mdui-col-sm-6">
-							<div class="mdui-textfield key-num">
-								<label class="mdui-textfield-label">默认动画时间（s)</label>
-								<input id="key2-transition-time" onchange="SaveKeySettings(2);"
-									class="mdui-textfield-input" type="number" />
-							</div>
 							<!--歌词控制按钮-->
 							<div>
 								<button id="key2-lyrics-back-btn" onclick='LyricsBack(2);'
@@ -264,6 +264,11 @@
 								<button id="key2-lyrics-play-forward-btn" onclick='LyricsPlayForward(2);'
 									class="mdui-btn mdui-ripple mdui-btn-icon mdui-color-theme-accent"><i
 										class="mdui-icon material-icons">redo</i></button>
+							</div>
+							<div class="mdui-textfield key-num">
+								<label class="mdui-textfield-label">默认动画时间（s)</label>
+								<input id="key2-transition-time" onchange="SaveKeySettings(2);"
+									class="mdui-textfield-input" type="number" />
 							</div>
 
 							<div class="mdui-textfield key-num">
