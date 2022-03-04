@@ -229,22 +229,26 @@
 					<div class="mdui-row lyrics-row">
 						<div class="mdui-col-xs-12 mdui-col-sm-6 ">
 							<!-- 歌曲列表 -->
-							<select id="key2-preset" onchange="PresetSwitched(2)" class="mdui-select"
-								mdui-select="{position: 'bottom'}"></select>
-							<button id="key2-delete-preset" onclick="deletePreset(2);"  mdui-tooltip="{content: '删除本曲'}"
+							<span id="key2-preset-container" class="preset-container">
+								<select id="key2-preset" onchange="PresetSwitched(2)" class="mdui-select"
+									mdui-select="{position: 'bottom'}"></select>
+							</span>
+							<button id="key2-delete-preset" onclick="deletePreset(2);" mdui-tooltip="{content: '删除本曲'}"
 								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12 mdui-btn-icon"><i
 									class="mdui-icon material-icons">delete_sweep</i></button>
 							<button id="key2-add-preset" onclick="addPreset(2);" mdui-tooltip="{content: '创建新歌词'}"
 								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12 mdui-btn-icon"><i
 									class="mdui-icon material-icons">playlist_add</i></button>
-							<button onclick='imexOpened(2);' id="import-export-key2-button"  mdui-tooltip="{content: '编辑JSON配置文件'}"
+							<button onclick='imexOpened(2);' id="import-export-key2-button"
+								mdui-tooltip="{content: '编辑JSON配置文件'}"
 								mdui-dialog="{target: '#import-export-key2-dialog'}"
 								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12 mdui-btn-icon"><i
 									class="mdui-icon material-icons">settings_ethernet</i></button>
-							<button onclick='editLyrics(2);' id="import-export-key2-button" mdui-tooltip="{content: '编辑歌词'}"
-								mdui-dialog="{target: '#key2-edit-lyrics-dialog'}"
+							<button onclick='editLyrics(2);' id="import-export-key2-button"
+								mdui-tooltip="{content: '编辑歌词'}" mdui-dialog="{target: '#key2-edit-lyrics-dialog'}"
 								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12 mdui-btn-icon"><i
 									class="mdui-icon material-icons">create</i></button>
+
 
 
 							<!-- 歌词列表 -->
@@ -255,13 +259,16 @@
 						<div class="mdui-col-xs-12 mdui-col-sm-6">
 							<!--歌词控制按钮-->
 							<div>
-								<button id="key2-lyrics-back-btn" onclick='LyricsBack(2);'  mdui-tooltip="{content: '后退一行'}"
+								<button id="key2-lyrics-back-btn" onclick='LyricsBack(2);'
+									mdui-tooltip="{content: '后退一行'}"
 									class="mdui-btn mdui-ripple mdui-btn-icon mdui-color-theme-accent"><i
 										class="mdui-icon material-icons">arrow_back</i></button>
-								<button id="key2-lyrics-forward-btn" onclick='LyricsForward(2);' mdui-tooltip="{content: '前进一行'}"
+								<button id="key2-lyrics-forward-btn" onclick='LyricsForward(2);'
+									mdui-tooltip="{content: '前进一行'}"
 									class="mdui-btn mdui-ripple mdui-btn-icon mdui-color-theme-accent"><i
 										class="mdui-icon material-icons">arrow_forward</i></button>
-								<button id="key2-lyrics-play-forward-btn" onclick='LyricsPlayForward(2);' mdui-tooltip="{content: '向前播放一行'}"
+								<button id="key2-lyrics-play-forward-btn" onclick='LyricsPlayForward(2);'
+									mdui-tooltip="{content: '向前播放一行'}"
 									class="mdui-btn mdui-ripple mdui-btn-icon mdui-color-theme-accent"><i
 										class="mdui-icon material-icons">redo</i></button>
 							</div>
@@ -299,11 +306,33 @@
 				<div class="mdui-panel-item-body">
 					<div class="mdui-row lyrics-row">
 						<div class="mdui-col-xs-12 mdui-col-sm-6 ">
-							<div id="key3-preset" class="mdui-tab mdui-tab-scrollable" mdui-tab>
+							<!-- 歌曲列表 -->
+							<span id="key3-preset-container" class="preset-container">
+								<select id="key3-preset" onchange="PresetSwitched(3)" class="mdui-select"
+									mdui-select="{position: 'bottom'}"></select>
+							</span>
+							<button id="key3-delete-preset" onclick="deletePreset(3);" mdui-tooltip="{content: '删除本曲'}"
+								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12 mdui-btn-icon"><i
+									class="mdui-icon material-icons">delete_sweep</i></button>
+							<button id="key3-add-preset" onclick="addPreset(3);" mdui-tooltip="{content: '创建新歌词'}"
+								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12 mdui-btn-icon"><i
+									class="mdui-icon material-icons">playlist_add</i></button>
+							<button onclick='imexOpened(3);' id="import-export-key3-button"
+								mdui-tooltip="{content: '编辑JSON配置文件'}"
+								mdui-dialog="{target: '#import-export-key3-dialog'}"
+								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12 mdui-btn-icon"><i
+									class="mdui-icon material-icons">settings_ethernet</i></button>
+							<button onclick='editLyrics(3);' id="import-export-key3-button"
+								mdui-tooltip="{content: '编辑歌词'}" mdui-dialog="{target: '#key3-edit-lyrics-dialog'}"
+								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12 mdui-btn-icon"><i
+									class="mdui-icon material-icons">create</i></button>
 
-							</div>
-							<ul id="key3-lyrics-list" class="mdui-list">
-							</ul>
+
+
+							<!-- 歌词列表 -->
+							<ul id="key3-lyrics-list" class="mdui-list mdui-list-dense lyrics-list"></ul>
+
+
 						</div>
 						<div class="mdui-col-xs-12 mdui-col-sm-6">
 							<button onclick='imexOpened(3);' id="import-export-key3-button"
@@ -334,7 +363,8 @@
 							</div>
 							<!--歌词控制按钮-->
 							<div>
-								<button id="key3-lyrics-back-btn" onclick='LyricsBack(3);' class="mdui-btn mdui-ripple mdui-btn-icon mdui-color-theme-accent">
+								<button id="key3-lyrics-back-btn" onclick='LyricsBack(3);'
+									class="mdui-btn mdui-ripple mdui-btn-icon mdui-color-theme-accent">
 									<i class="mdui-icon material-icons">arrow_back</i></button>
 								<button id="key3-lyrics-forward-btn" onclick='LyricsForward(3);'
 									class="mdui-btn mdui-ripple mdui-btn-icon mdui-color-theme-accent"><i

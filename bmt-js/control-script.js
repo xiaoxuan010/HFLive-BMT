@@ -80,7 +80,10 @@ function RefreshKeySettings(i) {
         mdui.updateSliders();//更新滑动条
     }
     else {
-        $(`#key${i}-preset`).empty();
+        $(`#key${i}-preset-container`).empty();
+        var pst_html = `<select id="key${i}-preset" onchange="PresetSwitched(${i})" class="mdui-select" mdui-select="{position: 'bottom'}"></select>`;
+
+        $(`#key${i}-preset-container`).prepend(pst_html);
         for (var j = 0; j < preset[i].content.length; j++) {
             var elem = document.createElement('option');
             $(elem).val(j);
@@ -89,8 +92,6 @@ function RefreshKeySettings(i) {
         }
         $(`#key${i}-preset`).val(preset[i].current_preset);
         mdui.mutation();
-        // var selectInst = new mdui.Select(`#key${i}-preset`);
-        // selectInst.handleUpdate();
         RefreshLyricsList(i);
     }
     $(`#key${i}-transition-time`).val(preset[i].transition_time); //读取转场时间，写入文本框
@@ -176,7 +177,7 @@ function addPreset(i) {
 
 //删除预设
 function deletePreset(i) {
-    mdui.confirm('确定要删除吗？',function(){
+    mdui.confirm('确定要删除吗？', function () {
         var cp = $(`#key${i}-preset`).val();//先读出现在的预设号
         preset[i].content.splice(cp--, 1);//从预设号开始删除1项
         $(`#key${i}-preset`).val(cp);
@@ -190,10 +191,10 @@ function deletePreset(i) {
         else {
             RefreshKeySettings(i);
         }
-    },function(){
+    }, function () {
         mdui.snackbar('已取消删除');
-    },{confirmText:'确定删除',cancelText:'取消'});
-    
+    }, { confirmText: '确定删除', cancelText: '取消' });
+
 }
 
 //追加一行歌词
