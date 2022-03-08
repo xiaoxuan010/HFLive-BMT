@@ -225,6 +225,21 @@
 							mdui-dialog-confirm>保存歌词并关闭</button>
 					</div>
 				</div>
+				<div id="key2-import-lrc-dialog" class="mdui-dialog">
+					<div class="mdui-dialog-title">导入LRC歌词</div>
+					<div class="mdui-dialog-content">
+						<div class="mdui-textfield">
+							<textarea id="key2-import-lrc-textarea" rows="8" class="mdui-textfield-input"
+								placeholder="在此处输入LRC格式歌词"></textarea>
+						</div>
+					</div>
+					<div class="mdui-dialog-actions">
+						<button class="mdui-btn mdui-ripple" mdui-dialog-cancel>取消</button>
+						<button onclick="importLrc(2);" class="mdui-btn mdui-ripple"
+							mdui-dialog-confirm>导入</button>
+					</div>
+				</div>
+
 				<div class="mdui-panel-item-body">
 					<div class="mdui-row lyrics-row">
 						<div class="mdui-col-xs-12 mdui-col-sm-6 ">
@@ -248,8 +263,10 @@
 								mdui-tooltip="{content: '编辑歌词'}" mdui-dialog="{target: '#key2-edit-lyrics-dialog'}"
 								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12 mdui-btn-icon"><i
 									class="mdui-icon material-icons">create</i></button>
-
-
+							<button id="import-export-key3-button" mdui-tooltip="{content: '导入LRC'}"
+								mdui-dialog="{target: '#key2-import-lrc-dialog'}"
+								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12 mdui-btn-icon"><i
+									class="mdui-icon material-icons">file_upload</i></button>
 
 							<!-- 歌词列表 -->
 							<ul id="key2-lyrics-list" class="mdui-list mdui-list-dense lyrics-list"></ul>
@@ -326,6 +343,10 @@
 								mdui-tooltip="{content: '编辑歌词'}" mdui-dialog="{target: '#key3-edit-lyrics-dialog'}"
 								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12 mdui-btn-icon"><i
 									class="mdui-icon material-icons">create</i></button>
+							<button onclick='importLRC(3);' id="import-lrc-key3-button"
+								mdui-tooltip="{content: '导入LRC'}" mdui-dialog="{target: '#key3-import-lrc-dialog'}"
+								class="mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-12 mdui-btn-icon"><i
+									class="mdui-icon material-icons">file_upload</i></button>
 
 
 
@@ -411,6 +432,7 @@
 				</div>
 
 			</div>
+			<script src="./js-lyrics/lyrics.min.js"></script>
 			<script src="./mdui/js/mdui.min.js"></script>
 			<script src="./bmt-js/default-preset.js"></script>
 			<script src="./bmt-js/control-script.js"></script>

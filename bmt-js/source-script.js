@@ -69,6 +69,8 @@ function RefreshContent() {
 
 //逐字出现
 function lyricsPlay(i) {
+    if(stillPlayingFlag[i])
+        return;
     stillPlayingFlag[i] = true;
     var cp = preset[i].current_preset;
     var j = 0;
@@ -78,42 +80,52 @@ function lyricsPlay(i) {
     if (tTime > 4000)
         tTime = 4000;
     var eTime = tTime / content.length;
-    $(`#key${i},#key${i}>*`).css('transition', `ease ${tTime / 10}ms`);
-    $(`#key${i}`).addClass('hide');
+    content = content.trim();
+    if (content == '') {
+        $(`#key${i},#key${i}>*`).css('transition', `ease ${tTime / 2}ms`);
+        $(`#key${i}`).addClass('hide');
+        setTimeout(function(){
+            stillPlayingFlag[i] = false;
+        },tTime/2);
+    }
+    else {
+        $(`#key${i},#key${i}>*`).css('transition', `ease ${tTime / 10}ms`);
+        $(`#key${i}`).addClass('hide');
 
-    setTimeout(function () {
-        $(`#key${i}-name`).empty();
-        $(`#key${i},#key${i}>*`).css('transition', 'unset');
-        $(`#key${i}`).removeClass('hide');
-        var PFtimer = setInterval(() => {
-            var chr = content[j++];
-            var elem = document.createElement('span');
-            $(elem).text(chr);
-            $(elem).addClass('hide');
-            $(elem).css({
-                'font-size': '0em',
-                'transition': `${eTime * 3}ms ease`,
-                'vertical-align': 'middle',
-                'text-align': 'center',
-                'display': 'inline-block',
-                'width': $(`#key${i}-name`).css('font-size')
-            })
-            $(`#key${i}-name`).append(elem);
-            setTimeout(function () {
-                $(elem).removeClass('hide');
-                $(elem).css('font-size', 'inherit');
-            }, 100);
-            if (j > content.length) {
-                clearInterval(PFtimer);
-                PFtimer = null;
-                stillPlayingFlag[i] = false;
-                return;
-            }
-        }, eTime);
-    }, tTime / 10);
-
-
+        setTimeout(function () {
+            $(`#key${i}-name`).empty();
+            $(`#key${i},#key${i}>*`).css('transition', 'unset');
+            $(`#key${i}`).removeClass('hide');
+            var PFtimer = setInterval(() => {
+                var chr = content[j++];
+                var elem = document.createElement('span');
+                $(elem).text(chr);
+                $(elem).addClass('hide');
+                $(elem).css({
+                    'font-size': '0em',
+                    'transition': `${eTime * 3}ms ease`,
+                    'vertical-align': 'middle',
+                    'text-align': 'center',
+                    // 'display': 'inline-block',
+                    // 'width': $(`#key${i}-name`).css('font-size')
+                })
+                $(`#key${i}-name`).append(elem);
+                setTimeout(function () {
+                    $(elem).removeClass('hide');
+                    $(elem).css('font-size', 'inherit');
+                }, 100);
+                if (j > content.length) {
+                    clearInterval(PFtimer);
+                    PFtimer = null;
+                    stillPlayingFlag[i] = false;
+                    return;
+                }
+            }, eTime);
+        }, tTime / 10);
+    }
 }
+
+
 //直接出现
 function lyricsShow(i) {
     var cp = preset[i].current_preset;
@@ -134,11 +146,10 @@ function lyricsShow(i) {
             $(elem).css({
                 'vertical-align': 'middle',
                 'text-align': 'center',
-                'display': 'inline-block',
-                'width': $(`#key${i}-name`).css('font-size')
+                // 'display': 'inline-block',
+                // 'width': $(`#key${i}-name`).css('font-size')
             })
             $(`#key${i}-name`).append(elem);
         }
     }
-
 }

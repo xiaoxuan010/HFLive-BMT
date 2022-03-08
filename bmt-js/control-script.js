@@ -426,3 +426,47 @@ function rm() {
     localStorage.removeItem(preset_id);
     location.reload();
 }
+
+
+//LRC 适配
+//LRC 测试
+
+function importLrc(i) {
+    var lrcStr = $(`#key${i}-import-lrc-textarea`).val();
+    var lrcObj = new Lyrics(lrcStr);
+    var LyricsListTimestamp = lrcObj.lyrics_all;
+    var LyricsListTransitionTime = $.map(LyricsListTimestamp, function (obj, index) {
+        if (index == LyricsListTimestamp.length - 1) {
+            return {
+                transition_time: 1,
+                text: LyricsListTimestamp[index].text
+            };
+        }
+        var deltaTime = LyricsListTimestamp[index + 1].timestamp - LyricsListTimestamp[index].timestamp;
+        if (deltaTime >= 3)
+            deltaTime = 3;
+        deltaTime--;
+        var text = LyricsListTimestamp[index].text.trim();
+        if(text=='')
+            deltaTime = 1;
+        var lineObj = {
+            transition_time: deltaTime,
+            text: text
+        };
+        return lineObj;
+    });
+
+    mdui.prompt('歌曲名', '导入LRC', function (value) {
+        var preset_index = preset[i].content.push({
+            "song_name": value,
+            "current_lyrics": 0,
+            "lyrics": LyricsListTransitionTime
+        });
+        preset[i].current_preset = preset_index - 1;
+        SavePresetToLocal();
+        RefreshKeySettings(i);
+    }, function () { return }, { confirmText: '导入', cancelText: '取消' });
+
+}
+
+
