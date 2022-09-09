@@ -1,0 +1,2464 @@
+[
+    {
+        "key_num": "0",
+        "key_name": "KEY0",
+        "status": "CLOSED",
+        "transition_time": "2",
+        "content": [
+            {
+                "num": "0",
+                "person": "",
+                "name": ""
+            },
+            {
+                "num": "1",
+                "person": "高二（12）班",
+                "name": "我的祖国"
+            },
+            {
+                "num": "2",
+                "person": "高二（11）班",
+                "name": "我的中国心"
+            },
+            {
+                "num": "3",
+                "person": "高二（5）班",
+                "name": "拥抱春天"
+            },
+            {
+                "num": "4",
+                "person": "高二（13）班",
+                "name": "新的天地"
+            },
+            {
+                "num": "5",
+                "person": "高二（8）班",
+                "name": "我和我的祖国"
+            },
+            {
+                "num": "6",
+                "person": "高二（7）班",
+                "name": "保卫黄河"
+            },
+            {
+                "num": "7",
+                "person": "高二（2）班",
+                "name": "在灿烂的阳光下"
+            },
+            {
+                "num": "8",
+                "person": "高二（4）班",
+                "name": "爱我中华"
+            },
+            {
+                "num": "9",
+                "person": "高二（6）班",
+                "name": "雪花"
+            },
+            {
+                "num": "10",
+                "person": "高二（10）班",
+                "name": "不忘初心"
+            },
+            {
+                "num": "11",
+                "person": "高二（9）班",
+                "name": "我们走在大路上"
+            },
+            {
+                "num": "12",
+                "person": "高二（3）班",
+                "name": "同一首歌"
+            },
+            {
+                "num": "13",
+                "person": "高二（1）班",
+                "name": "歌唱祖国"
+            }
+        ],
+        "current_preset": 13
+    },
+    {
+        "key_num": "1",
+        "key_name": "KEY1",
+        "status": "CLOSED",
+        "transition_time": "1",
+        "content": [
+            {
+                "num": "0",
+                "person": "表演者",
+                "name": "节目名"
+            }
+        ],
+        "current_preset": "0"
+    },
+    {
+        "key_num": "2",
+        "key_name": "KEY2",
+        "status": "CLOSED",
+        "transition_time": "1",
+        "current_preset": 13,
+        "content": [
+            {
+                "song_name": "1 - 12 我的祖国",
+                "current_lyrics": 0,
+                "lyrics": [
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "一条大河波浪宽"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "风吹稻花香两岸"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我家就在岸上住"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "听惯了艄公的号子"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "看惯了船上的白帆"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "一条大河波浪宽"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "风吹稻花香两岸"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我家就在岸上住"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "听惯了艄公的号子"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "看惯了船上的白帆"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "这是美丽的祖国"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "是我生长的地方"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "在这片辽阔的土地上"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "到处都有明媚的风光"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "姑娘好像花儿一样"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "小伙儿心胸多宽广"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "为了开辟新天地"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "唤醒了沉睡的高山"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "让那河流改变了模样"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "这是英雄的祖国"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "是我生长的地方"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "在这片古老的土地上"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "到处都有青春的力量"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "好山好水好地方"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "条条大路都宽畅"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "朋友来了有好酒"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "若是那豺狼来了"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "迎接它的有猎枪"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "这是强大的祖国"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "是我生长的地方"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "在这片温暖的土地上"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "到处都有和平的阳光"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    }
+                ]
+            },
+            {
+                "song_name": "2 - 11 我的中国心",
+                "current_lyrics": 0,
+                "lyrics": [
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "河山只在我梦萦"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "祖国已多年未亲近"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "可是不管怎样也改变不了"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我的中国心"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "洋装虽然穿在身"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我心依然是中国心"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我的祖先早已把我的一切"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "烙上中国印"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "长江 长城 黄山 黄河"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "在我心中重千斤"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "无论何时 无论何地"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "心中一样亲"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "流在心里的血"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "澎湃着中华的声音"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "就算身在他乡也改变不了"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我的中国心"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "长江 长城 黄山 黄河"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "在我心中重千斤"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "无论何时 无论何地"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "心中一样亲"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "流在心里的血"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "澎湃着中华的声音"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "就算身在他乡也改变不了"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我的中国心"
+                    }
+                ]
+            },
+            {
+                "song_name": "3 - 5 拥抱春天",
+                "current_lyrics": 0,
+                "lyrics": [
+                    {
+                        "transition_time": "1",
+                        "text": "最冷的冬天"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "有谁还能遗忘"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "肆虐的寒风"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "慌乱中的面孔"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "最孤独的节日"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "没有了烟花"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "萧瑟的街巷"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "闪过急驶的光亮"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "妄想远方"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "无法冲破心底的尘埃"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "纷落的雪花"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "大地怦然素陌"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "弥留之际"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "在喘息中坠落"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "你的勇敢"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "是最后一抹晨光"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "渴望春天"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "心中的太阳"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "又是你逆行危难"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "迎击狂澜"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "你是我的春天"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "却看不清你模样"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "传说中的天使"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "就是这样"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "真的不想离开"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "即使生命如此寻常"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "而你的平凡"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "将我怀抱于伟大"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "美丽的世界"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "是无尽的牵挂"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "永无止境的爱"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "灿若繁星"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "拥抱春天"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "喷薄的太阳"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "温暖我们扫尽沉霾"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "万物焕发"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "拥抱春天"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "看滔滔江水"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "融化万里冰河"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "不负东流"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "拥抱春天"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "喷薄的太阳"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "温暖我们扫尽沉霾"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "万物焕发"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "拥抱春天"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "看滔滔江水"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "灿若夜空繁星"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "融化万里冰河"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "不负东流"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "让我们紧紧拥抱"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "拥抱春天"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    }
+                ]
+            },
+            {
+                "song_name": "4 - 13 新的天地",
+                "current_lyrics": 0,
+                "lyrics": [
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "你是这样风雨兼程"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "你和百姓同心同行"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "就像树木扎根大地"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "就像种子和泥土相依"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "风里雨里航程壮丽"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "千里万里阳光在心里"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我的梦想照耀前方"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "你的信仰点燃勇气"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我们一起奋进接力"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "让我们一起播种希望耕耘土地"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我们自信 我们前行"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "看中华儿女走向新的天地"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我们一起奋进接力"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "让我们一起播种希望耕耘土地"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我们自信 我们前行"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "看中华儿女走向新的天地"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "风里雨里航程壮丽"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "千里万里阳光在心里"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我的梦想照耀前方"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "你的信仰点燃勇气"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我们一起奋进接力"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "让我们一起播种希望耕耘土地"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我们自信 我们前行"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "看中华儿女走向新的天地"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我们一起奋进接力"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "让我们一起播种希望耕耘土地"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我们自信 我们前行"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "看中华儿女走向新的天地"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我们一起奋进接力"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "让我们一起播种希望耕耘土地"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我们自信 我们前行"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "看中华儿女走向新的天地"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "看中华儿女走向新的天地"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    }
+                ]
+            },
+            {
+                "song_name": "5 - 8 我和我的祖国",
+                "current_lyrics": 0,
+                "lyrics": [
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我和我的祖国"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "一刻也不能分割"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "无论我走到哪里"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "都流出一首赞歌"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我歌唱每一座高山"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我歌唱每一条河"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "袅袅炊烟小小村落"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "路上一道辙"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "你用你那母亲的温情"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "和我诉说"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我的祖国和我"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "像海和浪花一朵"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "浪是那海的赤子"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "海是那浪的依托"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "每当大海在微笑"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我就是笑的漩涡"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我分担着海的忧愁"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "分享海的欢乐"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "永远给我碧浪清波"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "心中的歌"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我和我的祖国"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "一刻也不能分割"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "无论我走到哪里"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "都流出一首赞歌"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我歌唱每一座高山"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我歌唱每一条河"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "袅袅炊烟小小村落"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "路上一道辙"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "永远给我碧浪清波"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "心中的歌"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "永远给我碧浪清波"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "心中的歌"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    }
+                ]
+            },
+            {
+                "song_name": "6 - 7 保卫黄河",
+                "current_lyrics": 0,
+                "lyrics": [
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "风在吼"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "马在叫"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "黄河在咆哮"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "黄河在咆哮"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "河西山冈万丈高"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "河东河北"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "高粱熟了"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "万山丛中"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "抗日英雄真不少"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "青纱帐里"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "游击健儿逞英豪"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "端起了土枪洋枪"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "挥动着大刀长矛"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "保卫家乡"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "保卫黄河"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "保卫华北"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "保卫全中国"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "风在吼"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "马在叫"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "黄河在咆哮"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "黄河在咆哮"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "河西山冈万丈高"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "河东河北"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "高粱熟了"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "万山丛中"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "抗日英雄真不少"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "青纱帐里"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "游击健儿逞英豪"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "端起了土枪洋枪"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "挥动着大刀长矛"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "保卫家乡"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "保卫黄河"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "保卫华北"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "保卫全中国"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "风在吼"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "马在叫"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "黄河在咆哮"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "黄河在咆哮"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "河西山冈万丈高"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "河东河北"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "高粱熟了"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "万山丛中"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "抗日英雄真不少"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "青纱帐里"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "游击健儿逞英豪"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "端起了土枪洋枪"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "挥动着大刀长矛"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "保卫家乡"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "保卫黄河"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "保卫华北"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "保卫全中国"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "风在吼"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "马在叫"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "黄河在咆哮"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "黄河在咆哮"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "河西山冈万丈高"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "河东河北"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "高粱熟了"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "万山丛中"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "抗日英雄真不少"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "青纱帐里"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "游击健儿逞英豪"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "端起了土枪洋枪"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "挥动着大刀长矛"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "保卫家乡"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "保卫黄河"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "保卫华北"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "保卫全中国"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    }
+                ]
+            },
+            {
+                "song_name": "7 - 2 在灿烂的阳光下",
+                "current_lyrics": 0,
+                "lyrics": [
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "从小爷爷对我说"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "吃水不忘挖井人"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "曾经苦难才明白"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "没有共产党 哪有新中国"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "从小老师教我唱"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "唱支山歌给党听"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "几经风雨更懂得"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "跟着共产党 才有新中国"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "从小老师教我唱"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "唱支山歌给党听"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "几经风雨更懂得"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "跟着共产党 才有新中国"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "难忘开国大典的礼炮"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "激荡了亿万人的热血"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "难忘那场春风化雨"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "滋润了大江南北"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "难忘那回归盛典的升旗"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "激起了亿万人的热泪"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "难忘那世纪大检阅"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "扬起了民族气魄"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "闪耀着金光的铁锤镰刀"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "代表着民族的希望"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "闪耀着金光的铁锤镰刀"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "代表着民族的希望"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "希望 希望"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "从小爷爷对我说"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "吃水不忘挖井人"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "曾经苦难才明白"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "没有共产党 哪有新中国"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我们在时代春风里"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "春风催我永开拓"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我们在灿烂阳光下"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "跟着共产党 建设大中国"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "建设大中国"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    }
+                ]
+            },
+            {
+                "song_name": "8 - 4 爱我中华",
+                "current_lyrics": 0,
+                "lyrics": []
+            },
+            {
+                "song_name": "8 - 4 爱我中华",
+                "current_lyrics": 0,
+                "lyrics": [
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "爱我中华"
+                    },
+                    {
+                        "transition_time": 1,
+                        "text": "爱我中华"
+                    },
+                    {
+                        "transition_time": 1,
+                        "text": ""
+                    },
+                    {
+                        "transition_time": 0.8800000000000026,
+                        "text": "五十六个星座"
+                    },
+                    {
+                        "transition_time": 1.139999999999997,
+                        "text": "五十六枝花"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "五十六族 兄弟姐妹是一家"
+                    },
+                    {
+                        "transition_time": 1.0900000000000034,
+                        "text": "五十六种语言"
+                    },
+                    {
+                        "transition_time": 1.1700000000000017,
+                        "text": "汇成一句话"
+                    },
+                    {
+                        "transition_time": 0.11999999999999744,
+                        "text": "爱我中华"
+                    },
+                    {
+                        "transition_time": 0,
+                        "text": "爱我中华"
+                    },
+                    {
+                        "transition_time": 1.7199999999999989,
+                        "text": "爱我中华"
+                    },
+                    {
+                        "transition_time": 1,
+                        "text": ""
+                    },
+                    {
+                        "transition_time": 1.1200000000000045,
+                        "text": "爱我中华"
+                    },
+                    {
+                        "transition_time": 1.0599999999999952,
+                        "text": "五十六个星座"
+                    },
+                    {
+                        "transition_time": 1.0900000000000034,
+                        "text": "五十六枝花"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "五十六族 兄弟姐妹是一家"
+                    },
+                    {
+                        "transition_time": 1.0899999999999963,
+                        "text": "五十六种语言"
+                    },
+                    {
+                        "transition_time": 1.1099999999999994,
+                        "text": "汇成一句话"
+                    },
+                    {
+                        "transition_time": 0.10000000000000142,
+                        "text": "爱我中华"
+                    },
+                    {
+                        "transition_time": 0.04999999999999716,
+                        "text": "爱我中华"
+                    },
+                    {
+                        "transition_time": 0.980000000000004,
+                        "text": "爱我中华"
+                    },
+                    {
+                        "transition_time": 1.2199999999999989,
+                        "text": "爱我中华"
+                    },
+                    {
+                        "transition_time": 1.3499999999999943,
+                        "text": "健儿奋起步伐"
+                    },
+                    {
+                        "transition_time": 0.9900000000000091,
+                        "text": "爱我中华"
+                    },
+                    {
+                        "transition_time": 1.3799999999999955,
+                        "text": "建设我们的国家"
+                    },
+                    {
+                        "transition_time": 1.1400000000000006,
+                        "text": "爱我中华"
+                    },
+                    {
+                        "transition_time": 1.1099999999999994,
+                        "text": "中华雄姿英发"
+                    },
+                    {
+                        "transition_time": 0.960000000000008,
+                        "text": "爱我中华"
+                    },
+                    {
+                        "transition_time": 1.1999999999999886,
+                        "text": "五十六族 兄弟姐妹"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "五十六种语言汇成一句话"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "爱我中华"
+                    },
+                    {
+                        "transition_time": 1,
+                        "text": ""
+                    },
+                    {
+                        "transition_time": 0.8299999999999983,
+                        "text": "五十六个星座"
+                    },
+                    {
+                        "transition_time": 1.0900000000000034,
+                        "text": "五十六枝花"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "五十六族 兄弟姐妹是一家"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "五十六种语言 汇成一句话"
+                    },
+                    {
+                        "transition_time": 0.03999999999999204,
+                        "text": "爱我中华"
+                    },
+                    {
+                        "transition_time": 0.0700000000000216,
+                        "text": "爱我中华"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "爱我中华"
+                    },
+                    {
+                        "transition_time": 1.4599999999999795,
+                        "text": "爱我中华"
+                    },
+                    {
+                        "transition_time": 0.5400000000000205,
+                        "text": "五十六个星座 五十六支花"
+                    },
+                    {
+                        "transition_time": 1,
+                        "text": ""
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "五十六族兄弟姐妹是一家"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "五十六种语言 汇成一句话"
+                    },
+                    {
+                        "transition_time": 0.05000000000001137,
+                        "text": "爱我中华"
+                    },
+                    {
+                        "transition_time": 0.06999999999999318,
+                        "text": "爱我中华"
+                    },
+                    {
+                        "transition_time": 1.5900000000000034,
+                        "text": "爱我中华"
+                    },
+                    {
+                        "transition_time": 1,
+                        "text": ""
+                    },
+                    {
+                        "transition_time": 1.1999999999999886,
+                        "text": "爱我中华"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "五十六个星座 五十六支花"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "五十六族兄弟姐妹是一家"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "五十六种语言 汇成一句话"
+                    },
+                    {
+                        "transition_time": 0.01999999999998181,
+                        "text": "爱我中华"
+                    },
+                    {
+                        "transition_time": 0.17000000000001592,
+                        "text": "爱我中华"
+                    },
+                    {
+                        "transition_time": 1.1200000000000045,
+                        "text": "爱我中华"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "爱我中华 健儿奋起步伐"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "爱我中华 建设我们的国家"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "爱我中华 中华雄姿英发"
+                    },
+                    {
+                        "transition_time": 0.9900000000000091,
+                        "text": "爱我中华"
+                    },
+                    {
+                        "transition_time": 1.1599999999999966,
+                        "text": "五十六族 兄弟姐妹"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "五十六种语言汇成一句话"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "爱我中华"
+                    },
+                    {
+                        "transition_time": 1,
+                        "text": ""
+                    }
+                ]
+            },
+            {
+                "song_name": "9 - 6 雪花",
+                "current_lyrics": 0,
+                "lyrics": [
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "千万雪花 竞相开放"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "万千你我 汇聚成一个家"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "Thousands of snowflakes"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "competing for openness"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "Thousands of you and me"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "gather into a family"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "雪花 雪花 开在阳光下"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "在故乡 在远方 都一样闪亮"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "Snowflakes, snowflakes"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "open to the light"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "All around, all around"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "shining all the same"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "千万雪花 竞相开放"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "万千你我 汇聚成一个家"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "Thousands of snowflakes"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "competing for openness"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "Thousands of you and me"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "gather into a family"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "雪花 雪花 开在阳光下"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "在故乡 在远方 都一样闪亮"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "Snowflakes, snowflakes"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "open to the light"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "All around, all around"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "shining all the same"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "雪花 雪花 开在阳光下"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "在故乡 在远方 都一样闪亮"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "Snowflakes, snowflakes"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "open to the light"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "All around, all around"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "shining all the same"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "All around, all around"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "shining all the same"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    }
+                ]
+            },
+            {
+                "song_name": "10 - 10 不忘初心",
+                "current_lyrics": 0,
+                "lyrics": [
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "万水千山不忘来时路"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "鲜血浇灌出花开的国度"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "生死相依只为了那一句承诺"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "报答你是我唯一的倾诉"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "树高千尺根深在沃土"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "你是大地给我万般呵护"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "生生不息只为了那一份托付"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "无惧风雨迎来新日出"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "你是我的一切 我的全部"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "向往你的向往 幸福你的幸福"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "不忘初心 继续前进"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "万水千山最美中国道路"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "你是我的一切 我的全部"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "向往你的向往 幸福你的幸福"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "不忘初心 继续前进"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "万水千山最美中国道路"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "树高千尺根深在沃土"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "你是大地给我万般呵护"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "生生不息只为了那一份托付"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "无惧风雨迎来新日出"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "你是我的一切 我的全部"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "向往你的向往 幸福你的幸福"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "不忘初心 继续前进"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "万水千山最美中国道路"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "你是我的一切 我的全部"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "向往你的向往 幸福你的幸福"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "不忘初心 继续前进"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "万水千山最美中国道路"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "万水千山最美中国道路"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    }
+                ]
+            },
+            {
+                "song_name": "11 - 9 我们走在大路上",
+                "current_lyrics": 0,
+                "lyrics": [
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我们走在大路上"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "意气风发斗志昂扬"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "共产党领导革命队伍"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "披荆斩棘奔向前方"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "向前进向前进"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "革命气势不可阻挡"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "向前进向前进"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "朝着胜利的方向"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "革命红旗迎风飘扬"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "中华儿女奋发图强"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "勤恳建设锦绣河山"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "誓把祖国变成天堂"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "向前进向前进"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "革命气势不可阻挡"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "向前进向前进"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "朝着胜利的方向"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我们的道路洒满阳光"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我们的歌声传四方"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我们的朋友遍及全球"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "五洲架起友谊桥梁"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "向前进向前进"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "革命气势不可阻挡"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "向前进向前进"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "朝着胜利的方向"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我们的道路多么宽广"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我们的前程无比辉煌"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我们献身这壮丽的事业"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "无限幸福无上荣光"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "向前进向前进"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "革命气势不可阻挡"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "向前进向前进"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "朝着胜利的方向"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    }
+                ]
+            },
+            {
+                "song_name": "12 - 3 同一首歌",
+                "current_lyrics": 0,
+                "lyrics": [
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "鲜花曾告诉我你怎样走过"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "大地知道你心中的每一个角落"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "甜蜜的梦啊 谁都不会错过"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "终于迎来今天 这欢聚时刻"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "水千条山万座 我们曾走过"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "每一次相逢和笑脸都彼此铭刻"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "在阳光灿烂欢乐的日子里"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我们手拉手啊 想说的太多"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "星光洒满了 所有的童年"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "风雨走遍了 世间的角落"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "同样的感受 给了我们同样的渴望"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "同样的欢乐 给了我们同一首歌"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "阳光想渗透所有的语言"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "风儿把天下的故事传说"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "同样的感受 给了我们同样的渴望"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "同样的欢乐 给了我们同一首歌"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "阳光想渗透所有的语言"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "风儿把天下的故事传说"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "鲜花曾告诉我你怎样走过"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "大地知道你心中的每一个角落"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "甜蜜的梦啊 谁都不会错过"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "终于迎来今天这欢聚时刻"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    }
+                ]
+            },
+            {
+                "song_name": "13 - 1 歌唱祖国",
+                "current_lyrics": 0,
+                "lyrics": [
+                    {
+                        "transition_time": "1",
+                        "text": "五星红旗迎风飘扬"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "胜利歌声多么响亮"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "歌唱我们亲爱的祖国"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "从今走向繁荣富强"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "歌唱我们亲爱的祖国"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "从今走向繁荣富强"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "越过高山 越过平原"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "跨过奔腾的黄河长江"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "宽广美丽的土地"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "是我们亲爱的家乡"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "英雄的人民站起来了"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我们团结友爱坚强如钢"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "五星红旗迎风飘扬"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "胜利歌声多么响亮"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "歌唱我们亲爱的祖国"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "从今走向繁荣富强"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "歌唱我们亲爱的祖国"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "从今走向繁荣富强"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我们勤劳 我们勇敢"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "独立自由是我们的理想"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我们战胜了多少苦难"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "才得到今天的解放"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我们爱和平 我们爱家乡"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "谁敢侵犯我们就叫他灭亡"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "五星红旗迎风飘扬"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "胜利歌声多么响亮"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "歌唱我们亲爱的祖国"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "从今走向繁荣富强"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "歌唱我们亲爱的祖国"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "从今走向繁荣富强"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "东方太阳 正在升起"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "人民共和国正在成长"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我们领袖毛泽东"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "指引着前进的方向"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我们的生活天天向上"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我们的前程万丈光芒"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "五星红旗迎风飘扬"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "胜利歌声多么响亮"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "歌唱我们亲爱的祖国"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "从今走向繁荣富强"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "歌唱我们亲爱的祖国"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "从今走向繁荣富强"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "key_num": "3",
+        "key_name": "KEY3",
+        "status": "CLOSED",
+        "transition_time": "1",
+        "current_preset": 0,
+        "content": [
+            {
+                "song_name": "你的答案",
+                "current_lyrics": 0,
+                "lyrics": [
+                    {
+                        "transition_time": "1",
+                        "text": "也许世界就这样"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我也还在路上"
+                    }
+                ]
+            },
+            {
+                "song_name": "海阔天空",
+                "current_lyrics": 0,
+                "lyrics": [
+                    {
+                        "transition_time": "1",
+                        "text": "今天我"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "寒夜里看雪飘过"
+                    }
+                ]
+            }
+        ]
+    }
+]

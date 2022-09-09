@@ -46,7 +46,7 @@ body {
     font-size: 4rem;
     font-weight: bold;
     color: #FECC11;
-    text-shadow: #000000 0px 0px 10px, #CCCCCC 0px 0px 20px, #FECC1170 0px 0px 30px, #FECC1160 0px 0px 40px, #FECC1150 0px 0px 70px, #FECC1140 0px 0px 80px, #FECC1130 0px 0px 100px;
+    text-shadow: #555555 0px 0px 10px, #CCCCCC 0px 0px 20px, #FECC1170 0px 0px 30px, #FECC1160 0px 0px 40px, #FECC1150 0px 0px 70px, #FECC1140 0px 0px 80px, #FECC1130 0px 0px 100px;
 }
 
 .bmt-title {

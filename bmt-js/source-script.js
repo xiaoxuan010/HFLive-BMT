@@ -98,6 +98,13 @@ function lyricsPlay(i) {
             $(`#key${i}`).removeClass('hide');
             var PFtimer = setInterval(() => {
                 var chr = content[j++];
+                if (j > content.length) {
+                    clearInterval(PFtimer);
+                    PFtimer = null;
+                    stillPlayingFlag[i] = false;
+                    return;
+                }
+
                 var elem = document.createElement('span');
                 $(elem).text(chr);
                 $(elem).addClass('hide');
@@ -106,25 +113,29 @@ function lyricsPlay(i) {
                     'transition': `${eTime * 3}ms ease`,
                     'vertical-align': 'middle',
                     'text-align': 'center',
-                    // 'display': 'inline-block',
-                    // 'width': $(`#key${i}-name`).css('font-size')
-                })
+                    'display': 'inline-block',
+                    'width': getChrWidth(chr,$(`#key${i}-name`).css('font'))
+                });
                 $(`#key${i}-name`).append(elem);
                 setTimeout(function () {
                     $(elem).removeClass('hide');
                     $(elem).css('font-size', 'inherit');
                 }, 100);
-                if (j > content.length) {
-                    clearInterval(PFtimer);
-                    PFtimer = null;
-                    stillPlayingFlag[i] = false;
-                    return;
-                }
+                
             }, eTime);
         }, tTime / 10);
     }
 }
 
+//测算单个字符的宽度 使用canvas
+function getChrWidth(text, font) {
+    // re-use canvas object for better performance
+    var canvas = getChrWidth.canvas || (getChrWidth.canvas = document.createElement("canvas"));
+    var context = canvas.getContext("2d"); 
+    context.font = font;
+    var metrics = context.measureText(text);
+    return metrics.width;
+}
 
 //直接出现
 function lyricsShow(i) {

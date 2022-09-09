@@ -1,0 +1,896 @@
+[
+    {
+        "key_num": "0",
+        "key_name": "KEY0",
+        "status": "CLOSED",
+        "transition_time": "1",
+        "content": [
+            {
+                "num": "0",
+                "person": "副标题",
+                "name": "标题"
+            }
+        ],
+        "current_preset": "0"
+    },
+    {
+        "key_num": "1",
+        "key_name": "KEY1",
+        "status": "CLOSED",
+        "transition_time": "1",
+        "content": [
+            {
+                "num": "0",
+                "person": "表演者",
+                "name": "节目名"
+            }
+        ],
+        "current_preset": "0"
+    },
+    {
+        "key_num": "2",
+        "key_name": "KEY2",
+        "status": "OPENED",
+        "transition_time": "2",
+        "current_preset": "0",
+        "content": [
+            {
+                "song_name": "你的答案",
+                "current_lyrics": 0,
+                "lyrics": [
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "也许世界就这样"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我也还在路上"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "没有人能诉说"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "也许我只能沉默"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "眼泪湿润眼眶"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "可又不甘懦弱"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "低着头期待白昼"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "接受所有的嘲讽"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "向着风拥抱彩虹"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "勇敢地向前走"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "黎明的那道光"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "会越过黑暗"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "打破一切恐惧我能"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "找到答案"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "哪怕要逆着光"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "就驱散黑暗"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "丢弃所有的负担"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "不再孤单"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "不再孤单"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "也许世界就这样"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我也还在路上"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "没有人能诉说"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "也许我只能沉默"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "眼泪湿润眼眶"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "可又不甘懦弱"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "低着头期待白昼"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "接受所有的嘲讽"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "向着风拥抱彩虹"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "勇敢地向前走"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "黎明的那道光"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "会越过黑暗"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "打破一切恐惧我能"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "找到答案"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "哪怕要逆着光"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "就驱散黑暗"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "丢弃所有的负担"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "不再孤单"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "不再孤单"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "黎明的那道光"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "会越过黑暗"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "打破一切恐惧我能"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "找到答案"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "哪怕要逆着光"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "就驱散黑暗"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "有一万种的力量"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "淹没孤单"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "不再孤单"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "也许世界就这样"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我也还在路上"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "没有人能诉说"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "也许我只能沉默"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "眼泪湿润眼眶"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "可又不甘懦弱"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    }
+                ]
+            },
+            {
+                "song_name": "海阔天空",
+                "current_lyrics": 38,
+                "lyrics": [
+                    {
+                        "transition_time": 2,
+                        "text": ""
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "今天我 寒夜里看雪飘过"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "怀着冷却了的心窝漂远方"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "风雨里追赶 雾里分不清影踪"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "天空海阔你与我"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "可会变 (谁没在变)"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "多少次 迎着冷眼与嘲笑"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "从没有放弃过心中的理想"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "一刹那恍惚 若有所失的感觉"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "不知不觉已变淡"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "心里爱 (谁明白我)"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "原谅我这一生不羁放纵爱自由"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "也会怕有一天会跌倒"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "背弃了理想 谁人都可以"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "哪会怕有一天只你共我"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": ""
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "今天我 寒夜里看雪飘过"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "怀着冷却了的心窝漂远方"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "风雨里追赶 雾里分不清影踪"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "天空海阔你与我"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "可会变 (谁没在变)"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "原谅我这一生不羁放纵爱自由"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "也会怕有一天会跌倒"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "背弃了理想 谁人都可以"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "哪会怕有一天只你共我"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": ""
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "仍然自由自我 永远高唱我歌"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "走遍千里"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "原谅我这一生不羁放纵爱自由"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "也会怕有一天会跌倒"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "背弃了理想 谁人都可以"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "哪会怕有一天只你共我"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "背弃了理想 谁人都可以"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "哪会怕有一天只你共我"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "原谅我这一生不羁放纵爱自由"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "也会怕有一天会跌倒"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "背弃了理想 谁人都可以"
+                    },
+                    {
+                        "transition_time": 2,
+                        "text": "哪会怕有一天只你共我"
+                    },
+                    {
+                        "transition_time": "5",
+                        "text": ""
+                    }
+                ]
+            },
+            {
+                "song_name": "讲不出再见",
+                "current_lyrics": 5,
+                "lyrics": [
+                    {
+                        "transition_time": "1",
+                        "text": "是对是错也好不必说了"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "是怨是爱也好不须揭晓"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "何事更重要 比两心的需要"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "柔情蜜意怎么可缺少"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "是进是退也好有若狂潮"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "是痛是爱也好不须发表"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "曾为你愿意 我梦想都不要"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "流言自此心知不会少"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "这段情 越是浪漫越美妙"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "离别最是吃不消"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我最不忍看你 背向我转面"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "要走一刻请不必诸多眷恋"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "浮沉浪似人潮 哪会没有思念"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "你我伤心到讲不出再见"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "是进是退也好有若狂潮"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "是痛是爱也好不须发表"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "曾为你愿意 我梦想都不要"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "流言自此心知不会少"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "这段情 越是浪漫越美妙"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "离别最是吃不消"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我最不忍看你 背向我转面"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "要走一刻请不必诸多眷恋"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "浮沉浪似人潮 哪会没有思念"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "你我伤心到讲不出再见"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我最不忍看你 背向我转面"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "要走一刻请不必诸多眷恋"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "浮沉浪似人潮 哪会没有思念"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "你我伤心到讲不出再见"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我最不忍看你 背向我转面"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "要走一刻请不必诸多眷恋"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "浮沉浪似人潮 哪会没有思念"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "你我伤心到讲不出再见"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    }
+                ]
+            },
+            {
+                "song_name": "Perfect",
+                "current_lyrics": 58,
+                "lyrics": [
+                    {
+                        "transition_time": "1",
+                        "text": ""
+                    },
+                    {
+                        "transition_time": "2",
+                        "text": "I found a love for me"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "Darling just dive right in and follow my lead"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "I found a girl"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "Beautiful and sweet"
+                    },
+                    {
+                        "transition_time": "2",
+                        "text": "I never knew you were the someone waiting for me"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "Cause we were just kids when we fell in love"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "Not knowing what it was"
+                    },
+                    {
+                        "transition_time": "2",
+                        "text": "I will not give you up this time"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "But darling just kiss me slow"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "your heart is all I own"
+                    },
+                    {
+                        "transition_time": "2",
+                        "text": "And in your eyes you're holding mine"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "Baby I'm"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "Dancing in the dark"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "With you between my arms"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "Barefoot on the grass"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "Listening to our favorite song"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "When you said you looked a mess"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "I whispered underneath my breath"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "But you heard it"
+                    },
+                    {
+                        "transition_time": "2",
+                        "text": "Darling, you look perfect tonight"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "I found a woman"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "Stronger than anyone I know"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "She shares my dreams "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "I hope that someday"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "I'll share her home"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "I found a love"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "To carry more than just my secrets"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "To carry love"
+                    },
+                    {
+                        "transition_time": "2",
+                        "text": "To carry children of our own"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "We are still kids"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "But we're so in love"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "Fighting against all odds"
+                    },
+                    {
+                        "transition_time": "2",
+                        "text": "I know we'll be alright this time"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "Darling just hold my hand"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "Be my girl I'll be your man"
+                    },
+                    {
+                        "transition_time": "2",
+                        "text": "I see my future in your eyes"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "Baby I'm"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "Dancing in the dark"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "With you between my arms"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "Barefoot on the grass"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "Listening to our favorite song"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "When I saw you in that dress"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "Looking so beautiful"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "I don't deserve this"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "Darling you look perfect tonight"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": " "
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "Baby I'm"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "Dancing in the dark"
+                    },
+                    {
+                        "transition_time": "2",
+                        "text": "With you between my arms"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "Barefoot on the grass"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "Listening to our favorite song"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "I have faith in what I see"
+                    },
+                    {
+                        "transition_time": "2",
+                        "text": "Now I know I have met an angel in person"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "And she looks perfect"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "I don't deserve this"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "You look perfect tonight"
+                    },
+                    {
+                        "transition_time": "5",
+                        "text": ""
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "key_num": "3",
+        "key_name": "KEY3",
+        "status": "CLOSED",
+        "transition_time": "1",
+        "current_preset": "1",
+        "content": [
+            {
+                "song_name": "你的答案",
+                "current_lyrics": 0,
+                "lyrics": [
+                    {
+                        "transition_time": "1",
+                        "text": "也许世界就这样"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "我也还在路上"
+                    }
+                ]
+            },
+            {
+                "song_name": "海阔天空",
+                "current_lyrics": 1,
+                "lyrics": [
+                    {
+                        "transition_time": "1",
+                        "text": "今天我"
+                    },
+                    {
+                        "transition_time": "1",
+                        "text": "寒夜里看雪飘过"
+                    }
+                ]
+            }
+        ]
+    }
+]
